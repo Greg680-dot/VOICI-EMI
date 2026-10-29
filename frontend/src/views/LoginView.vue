@@ -200,8 +200,8 @@ const handleLogin = async () => {
             </div>
           </form>
 
-          <!-- Footer registration link & admin helper note -->
-          <div class="pt-4 border-t border-surface-border text-center space-y-3">
+          <!-- Footer registration link -->
+          <div class="pt-4 border-t border-surface-border text-center">
             <p class="text-xs text-ink-muted">
               Pas encore de compte ?
               <router-link 
@@ -211,13 +211,6 @@ const handleLogin = async () => {
                 Créer un compte citoyen ou apprenant
               </router-link>
             </p>
-
-            <div class="bg-surface-muted/60 p-3 rounded-xl border border-surface-border text-left">
-              <p class="text-[11px] text-ink-muted leading-relaxed">
-                <span class="font-bold text-navy-700">Accès Super-Administrateur :</span> 
-                <code class="bg-white px-1.5 py-0.5 rounded border border-surface-border text-navy-800 text-[10px]">sa@voici-emi.bj</code>
-              </p>
-            </div>
           </div>
 
         </div>
