@@ -13,9 +13,9 @@ COPY frontend/ ./
 RUN npm run build
 
 # ==============================================================================
-# STAGE 2 : PRODUCTION RUNTIME (PHP 8.3-FPM + NGINX + LARAVEL 13)
+# STAGE 2 : PRODUCTION RUNTIME (PHP 8.4-FPM + NGINX + LARAVEL 13)
 # ==============================================================================
-FROM php:8.3-fpm-alpine
+FROM php:8.4-fpm-alpine
 
 # Install system dependencies & build tools
 RUN apk add --no-cache \
@@ -64,7 +64,7 @@ COPY backend/ .
 RUN cp -n .env.example .env 2>/dev/null || true
 
 # Install PHP dependencies without running artisan scripts during container build
-RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts --ignore-platform-req=php+
 
 # Copy built frontend assets from stage 1 into Laravel public directory
 COPY --from=frontend-builder /app/dist/ /var/www/html/public/
