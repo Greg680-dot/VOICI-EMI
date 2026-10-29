@@ -6,6 +6,12 @@ export PORT="${PORT:-10000}"
 echo "=> Configuring Nginx to listen on port $PORT..."
 sed -i "s/\${PORT}/$PORT/g" /etc/nginx/http.d/default.conf
 
+# Ensure .env exists
+if [ ! -f /var/www/html/.env ]; then
+    echo "=> Initializing .env file..."
+    cp /var/www/html/.env.example /var/www/html/.env
+fi
+
 # SQLite auto-provisioning if no external database is configured
 if [ "$DB_CONNECTION" = "sqlite" ] || [ -z "$DB_CONNECTION" ]; then
     echo "=> Setting up SQLite database..."
@@ -22,6 +28,10 @@ if [ -z "$APP_KEY" ]; then
     echo "=> Generating application encryption key..."
     php artisan key:generate --force
 fi
+
+# Discover Laravel packages now that environment is ready
+echo "=> Discovering Laravel packages..."
+php artisan package:discover --ansi
 
 # Ensure storage and cache directory permissions
 chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database

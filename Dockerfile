@@ -32,20 +32,24 @@ RUN apk add --no-cache \
     libzip-dev \
     icu-dev \
     postgresql-dev \
-    oniguruma-dev
+    oniguruma-dev \
+    libxml2-dev
 
-# Configure and install PHP extensions
+# Configure and install all required PHP extensions (including mbstring, pcntl, exif)
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) \
         pdo \
         pdo_sqlite \
         pdo_mysql \
         pdo_pgsql \
+        mbstring \
         bcmath \
         gd \
         zip \
         intl \
-        opcache
+        opcache \
+        pcntl \
+        exif
 
 # Install official Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -56,8 +60,11 @@ WORKDIR /var/www/html
 # Copy backend files
 COPY backend/ .
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+# Prepare minimal .env for composer
+RUN cp -n .env.example .env 2>/dev/null || true
+
+# Install PHP dependencies without running artisan scripts during container build
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 # Copy built frontend assets from stage 1 into Laravel public directory
 COPY --from=frontend-builder /app/dist/ /var/www/html/public/
