@@ -1,0 +1,580 @@
+<div class="flex flex-col w-full">
+<!-- Top Ambient Banner & Strategic Header -->
+<section class="relative w-full pt-space-xl pb-space-2xl bg-gradient-to-b from-surface-container-low via-warm-canvas to-warm-canvas overflow-hidden">
+<!-- Subtle African continent contour SVG watermark -->
+<div class="absolute -right-24 top-0 w-96 h-96 opacity-10 pointer-events-none text-primary">
+<svg class="w-full h-full" fill="currentColor" viewbox="0 0 100 100">
+<path d="M50 5 C60 12, 75 15, 85 30 C90 42, 85 55, 78 68 C70 82, 58 92, 52 98 C46 95, 38 78, 30 65 C22 55, 15 45, 18 32 C22 20, 36 10, 50 5 Z"></path>
+</svg>
+</div>
+<div class="max-w-[1280px] mx-auto px-margin-desktop relative z-10">
+<!-- Breadcrumb & Tag -->
+<div class="flex items-center gap-space-sm mb-space-md">
+<span class="inline-flex items-center gap-1 bg-badge-rose-bg text-badge-rose-text px-3 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-vitality-rose animate-ping"></span>
+          Agenda 2025 • 24 Pays Actifs
+        </span>
+<span class="text-outline-variant font-label-md text-label-md">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-wider uppercase">Éducation aux Médias &amp; Délibération Citoyenne</span>
+</div>
+<!-- Main Editorial Headline -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-end mb-space-xl">
+<div class="lg:col-span-8">
+<h1 class="font-headline-2xl text-headline-2xl text-primary font-serif leading-none tracking-tight mb-space-sm">
+            Rencontres, Débats &amp; <br/>
+<span class="italic text-tertiary">Vie du Réseau Panafricain</span>
+</h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-3xl">
+            Une dynamique vivante, ouverte et décentralisée : webinaires interactifs en accès libre, cafés-médias au cœur des campus universitaires et ateliers d’autodéfense numérique déployés dans 24 pays pour aiguiser l'esprit critique continental.
+          </p>
+</div>
+<!-- Live Indicator & Eco-data stat -->
+<div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-end">
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex items-center gap-space-md w-full max-w-xs">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">14 820+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Citoyens &amp; journalistes formés cette année</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Filter Control Center -->
+<div class="bg-surface-card p-space-md rounded-2xl shadow-sm flex flex-col gap-space-md">
+<!-- Row 1: Format Pills -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px] text-primary">filter_alt</span>
+<span>Format pédagogique :</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs" id="filter-format">
+<button class="filter-btn active bg-primary text-on-primary px-space-md py-1.5 rounded-full font-label-lg text-label-lg transition-all" data-format="all">
+              Tous les formats
+            </button>
+<button class="filter-btn bg-surface-container-low text-on-surface-variant hover:bg-surface-container px-space-md py-1.5 rounded-full font-label-lg text-label-lg transition-all" data-format="webinaire">
+              Webinaires en direct
+            </button>
+<button class="filter-btn bg-surface-container-low text-on-surface-variant hover:bg-surface-container px-space-md py-1.5 rounded-full font-label-lg text-label-lg transition-all" data-format="atelier">
+              Ateliers pratiques de terrain
+            </button>
+<button class="filter-btn bg-surface-container-low text-on-surface-variant hover:bg-surface-container px-space-md py-1.5 rounded-full font-label-lg text-label-lg transition-all" data-format="cafe">
+              Cafés-Médias étudiants
+            </button>
+<button class="filter-btn bg-surface-container-low text-on-surface-variant hover:bg-surface-container px-space-md py-1.5 rounded-full font-label-lg text-label-lg transition-all" data-format="live">
+              Tables-rondes &amp; Conférences
+            </button>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-container-highest"></div>
+<!-- Row 2: Timezone & Hub selector -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+<span>Fuseaux &amp; Hubs d'ancrage :</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs" id="filter-timezone">
+<button class="tz-btn active bg-secondary text-on-secondary px-space-md py-1 rounded-full font-label-md text-label-md transition-all">
+              Tous les fuseaux
+            </button>
+<button class="tz-btn bg-surface-container-low text-on-surface-variant hover:bg-surface-container px-space-md py-1 rounded-full font-label-md text-label-md transition-all">
+              GMT (Dakar • Abidjan • Bamako)
+            </button>
+<button class="tz-btn bg-surface-container-low text-on-surface-variant hover:bg-surface-container px-space-md py-1 rounded-full font-label-md text-label-md transition-all">
+              GMT+1 (Cotonou • Yaoundé • Kinshasa • Tunis)
+            </button>
+<button class="tz-btn bg-surface-container-low text-on-surface-variant hover:bg-surface-container px-space-md py-1 rounded-full font-label-md text-label-md transition-all">
+              GMT+3 (Nairobi • Addis-Abeba • Antananarivo)
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Événement Majeur à la Une (Grand Format Bento Asymétrique) -->
+<section class="max-w-[1280px] w-full mx-auto px-margin-desktop py-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-solar-orange text-[22px]">star</span>
+<h2 class="font-label-lg text-label-lg uppercase tracking-wider text-primary font-bold">Événement Continent à la Une</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-space-sm py-1 rounded-md">
+        Diffusion Haute Disponibilité • Accès Basse Bande Passante
+      </span>
+</div>
+<!-- Mega Card -->
+<div class="bg-surface-card rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 relative group">
+<!-- Media/Illustration Left/Top Panel -->
+<div class="lg:col-span-5 relative min-h-[340px] lg:min-h-[460px] overflow-hidden bg-primary flex flex-col justify-between p-space-lg text-on-primary">
+<div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30 transform group-hover:scale-105 transition-transform duration-700" data-alt="Photographie de presse authentique d'une salle de conférence africaine moderne avec de jeunes journalistes et étudiants analysant des flux vidéo sur grands écrans, éclairage bleu royal et orange vif chaleureux, ambiance intellectuelle et engagée." style="background-image: url('/assets/images/visual-f64e8286ab3b.svg')"></div>
+<!-- Live Badges -->
+<div class="relative z-10 flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 bg-vitality-rose text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold shadow-md">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+            Masterclasse Panafricaine
+          </span>
+<span class="bg-primary-container/80 backdrop-blur-md text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+            Accès 1-Clic Libre
+          </span>
+</div>
+<!-- Quote / Context in Hero Image -->
+<div class="relative z-10 mt-auto bg-surface-container-lowest/10 backdrop-blur-md p-space-md rounded-xl">
+<p class="font-headline-sm text-headline-sm italic font-serif leading-snug mb-2 text-white">
+            "Le trucage de la voix d'un candidat à la veille du scrutin n'est plus une fiction : c'est un risque électoral direct dans nos démocraties."
+          </p>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim block uppercase tracking-wider font-semibold">
+            Protocole d'intervention d'urgence VoiCI-EMI
+          </span>
+</div>
+</div>
+<!-- Content Right Panel -->
+<div class="lg:col-span-7 p-space-xl flex flex-col justify-between">
+<div>
+<!-- Meta Times with timezone breakdown -->
+<div class="flex flex-wrap items-center gap-space-sm mb-space-sm font-label-md text-label-md text-secondary">
+<span class="inline-flex items-center gap-1 font-bold bg-badge-green-bg text-badge-green-text px-2.5 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+              Jeudi 24 Octobre 2025
+            </span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[16px] text-solar-orange">schedule</span>
+              14:00 GMT (Dakar/Abidjan)
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant font-medium">15:00 GMT+1 (Yaoundé/Kinshasa)</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant font-medium">17:00 GMT+3 (Nairobi)</span>
+</div>
+<h3 class="font-headline-xl text-headline-xl text-primary font-serif mb-space-sm leading-tight">
+            Masterclasse Panafricaine : Détecter et contrer les deepfakes électoraux et clones vocaux en période de scrutin
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+            Alors que plusieurs échéances électorales majeures s’ouvrent sur le continent, la manipulation par synthèse vocale (clonage IA) et vidéos génératives s’intensifie sur les messageries chiffrées. Cette session pratique décortique les artefacts acoustiques, la vérification de métadonnées et la vitesse de riposte citoyenne.
+          </p>
+<!-- Speakers Row -->
+<div class="mb-space-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-space-xs font-bold">
+              Intervenants d'autorité invités
+            </span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Speaker 1 -->
+<div class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait studio de Dre Félicité Manga, chercheuse camerounaise spécialiste en intelligence artificielle et traitement du signal vocal, souriante et regard bienveillant, portant une tenue professionnelle contemporaine." src="/assets/images/visual-8e59ec6c16ca.svg"/>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary leading-tight">Dr. Félicité Manga</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-tight">Dir. Labo IA &amp; Médias (Univ. Yaoundé I)</p>
+</div>
+</div>
+<!-- Speaker 2 -->
+<div class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait studio de Koffi Mensah, journaliste d'investigation togolais et fact-checker primé, expert en vérification d'images en Afrique de l'Ouest, regard concentré et lunettes élégantes." src="/assets/images/visual-30882bfef26f.svg"/>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary leading-tight">Koffi Mensah</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-tight">Rédacteur en chef FactCheck Panafrica</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Registration Action Block (1-Click Instant) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[28px] text-secondary">bolt</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-bold">Inscription Directe en 1 Clic</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lien Zoom Webinaire chiffré généré sans mot de passe requis</span>
+</div>
+</div>
+<button class="w-full sm:w-auto bg-primary text-on-primary hover:bg-primary-container px-space-xl py-space-sm rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs transition-all shadow-md hover:shadow-lg flex-shrink-0" onclick="handleInstantRegister(this)">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+<span>Je réserve ma place</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Grille des Prochaines Rencontres & Ateliers Stratégiques -->
+<section class="max-w-[1280px] w-full mx-auto px-margin-desktop py-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="inline-flex items-center gap-1.5 font-label-md text-label-md uppercase tracking-wider text-secondary font-bold mb-space-xs">
+<span class="material-symbols-outlined text-[16px]">event_note</span>
+<span>Prochaines Sessions Confirmées</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-primary font-serif">
+          Découvrez la grille des ateliers &amp; cafés-médias
+        </h2>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+        Accès libre aux membres de la communauté étudiante, journalistes et animateurs d'ONG.
+      </div>
+</div>
+<!-- 3-Column Card Mosaic Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<!-- Card 1: Café-Média Cotonou -->
+<article class="bg-surface-card rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+<div>
+<!-- Visual Header -->
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Groupe d'étudiants africains réunis dans une cour universitaire ombragée à Cotonou autour d'un café débat avec des ordinateurs portables et téléphones, discutant de la vérification de messages WhatsApp dans une atmosphère stimulante." src="/assets/images/visual-766693265975.svg"/>
+<div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+<span class="bg-badge-orange-bg text-badge-orange-text font-label-md text-label-md px-2.5 py-1 rounded-full font-bold">
+                Café-Média Campus
+              </span>
+<span class="bg-surface-card/90 backdrop-blur-sm text-on-surface font-label-md text-label-md px-2.5 py-1 rounded-full font-medium">
+                Hub Cotonou
+              </span>
+</div>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm mb-space-xs">
+<span class="material-symbols-outlined text-[16px] text-solar-orange">schedule</span>
+<span>Samedi 26 Octobre 2025 • 10:00 GMT+1</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-serif mb-space-xs leading-snug">
+              Esprit critique &amp; Rumeurs sanitaires sur WhatsApp
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-3">
+              Session hybride avec la faculté des sciences de la santé d'Abomey-Calavi. Comment décrypter les prétendus remèdes miracles, les messages transférés 'mille fois' et concevoir des vocaux audio de démenti en langues locales (Fon, Yoruba).
+            </p>
+<!-- Metadata Pills -->
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="bg-surface-container-low px-2 py-0.5 rounded text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Campus &amp; Streaming
+              </span>
+<span class="bg-surface-container-low px-2 py-0.5 rounded text-secondary font-medium">
+                Places limitées (60)
+              </span>
+</div>
+</div>
+</div>
+<div class="p-space-lg pt-0">
+<div class="h-[1px] w-full bg-surface-container-low mb-space-md"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-green-text font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Ouvert aux inscriptions
+            </span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-bold flex items-center gap-1" onclick="handleModalQuickView(1)">
+              Détails &amp; Inscription <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Atelier d'autodéfense Smartphone -->
+<article class="bg-surface-card rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+<div>
+<!-- Visual Header -->
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Gros plan sur les mains d'un jeune homme africain utilisant un smartphone Android pour exécuter une recherche d'image inversée sur Google Lens et TinEye, interface montrant des outils d'investigation numérique, style documentaire soigné." src="/assets/images/visual-6b93f20724ef.svg"/>
+<div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+<span class="bg-badge-blue-bg text-badge-blue-text font-label-md text-label-md px-2.5 py-1 rounded-full font-bold">
+                Atelier Pratique
+              </span>
+<span class="bg-badge-green-bg text-badge-green-text font-label-md text-label-md px-2.5 py-1 rounded-full font-bold">
+                100% Gratuit
+              </span>
+</div>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm mb-space-xs">
+<span class="material-symbols-outlined text-[16px] text-solar-orange">schedule</span>
+<span>Mardi 29 Octobre 2025 • 18:30 GMT</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-serif mb-space-xs leading-snug">
+              Comment vérifier une image détournée avec son smartphone
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-3">
+              Pas besoin d'un PC surpuissant. Maîtrisez les moteurs de recherche inversée mobile, l'extraction de métadonnées EXIF avec des outils web gratuits et le géorepérage rapide avec des repères visuels (plaques minéralogiques, végétation sahélienne).
+            </p>
+<!-- Metadata Pills -->
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="bg-surface-container-low px-2 py-0.5 rounded text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">devices</span> Webinaire 100% interactif
+              </span>
+<span class="bg-surface-container-low px-2 py-0.5 rounded text-on-surface-variant font-medium">
+                Kit PDF fourni
+              </span>
+</div>
+</div>
+</div>
+<div class="p-space-lg pt-0">
+<div class="h-[1px] w-full bg-surface-container-low mb-space-md"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-green-text font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Session certifiante
+            </span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-bold flex items-center gap-1" onclick="handleModalQuickView(2)">
+              Détails &amp; Inscription <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Table-Ronde UNESCO MIL -->
+<article class="bg-surface-card rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+<div>
+<!-- Visual Header -->
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Panel officiel de discussion avec des diplomates et experts africains des politiques publiques numériques, micros sur table avec écussons institutionnels, bandeau de conférence pan-africaine, éclairage sobre et prestigieux." src="/assets/images/visual-b8b1e05ea1c5.svg"/>
+<div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+<span class="bg-badge-rose-bg text-badge-rose-text font-label-md text-label-md px-2.5 py-1 rounded-full font-bold">
+                Table-Ronde d'Élite
+              </span>
+<span class="bg-surface-card/90 backdrop-blur-sm text-primary font-label-md text-label-md px-2.5 py-1 rounded-full font-semibold">
+                Alliance UNESCO MIL
+              </span>
+</div>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm mb-space-xs">
+<span class="material-symbols-outlined text-[16px] text-solar-orange">schedule</span>
+<span>Vendredi 7 Novembre 2025 • 15:00 GMT+3</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-serif mb-space-xs leading-snug">
+              Régulation des algorithmes et désinformation en Afrique
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md line-clamp-3">
+              Débat de haut niveau sur la modération des plateformes dans les langues locales africaines (Swahili, Wolof, Haoussa, Lingala). Quelles responsabilités pour les géants de la tech et quelles souverainetés pour les régulateurs africains ?
+            </p>
+<!-- Metadata Pills -->
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="bg-surface-container-low px-2 py-0.5 rounded text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">podium</span> En direct de Nairobi
+              </span>
+<span class="bg-surface-container-low px-2 py-0.5 rounded text-on-surface-variant font-medium">
+                Traduction EN / FR
+              </span>
+</div>
+</div>
+</div>
+<div class="p-space-lg pt-0">
+<div class="h-[1px] w-full bg-surface-container-low mb-space-md"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-blue-text font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Diffusion Satellite &amp; Web
+            </span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-bold flex items-center gap-1" onclick="handleModalQuickView(3)">
+              Détails &amp; Inscription <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Section 3: Fil d'actualité du Réseau & Comptes-rendus de Terrain -->
+<section class="w-full bg-surface-container-low py-space-3xl mt-space-lg">
+<div class="max-w-[1280px] mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+<div>
+<div class="inline-flex items-center gap-1.5 font-label-md text-label-md uppercase tracking-wider text-vitality-rose font-bold mb-space-xs">
+<span class="material-symbols-outlined text-[16px]">history_edu</span>
+<span>Terrain &amp; Impact Direct</span>
+</div>
+<h2 class="font-headline-2xl text-headline-2xl text-primary font-serif">
+            Comptes-rendus &amp; Ressources Pédagogiques
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-space-xs">
+            Chaque rencontre donne lieu à une synthèse documentaire vérifiée et un support pédagogique mis à disposition sous licence libre, optimisé pour les réseaux à faible connectivité.
+          </p>
+</div>
+<a class="inline-flex items-center gap-space-xs text-primary font-label-lg text-label-lg font-bold hover:underline" href="#">
+          Consulter l'archive complète des retours
+          <span class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+</div>
+<!-- Feed Rows -->
+<div class="space-y-space-lg">
+<!-- Record 1: Dakar -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-shadow grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<div class="lg:col-span-3 rounded-xl overflow-hidden h-44 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="Atelier pratique dans une université à Dakar avec des étudiantes sénégalaises travaillant en groupe sur l'analyse de messages trompeurs avec des post-its et des feutres, sourires et concentration, lumière naturelle abondante." src="/assets/images/visual-331f3e138afb.svg"/>
+<div class="absolute bottom-2 left-2 bg-surface-card/90 backdrop-blur-sm px-2 py-0.5 rounded text-xs font-bold text-primary">
+              Dakar, Sénégal
+            </div>
+</div>
+<div class="lg:col-span-6">
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-secondary">Atelier Pôle Afrique de l'Ouest</span>
+<span>•</span>
+<span>Rapport validé le 12 Octobre 2025</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-serif mb-space-xs">
+              Restitution du Café-Média UCAD : 120 délégués formés à la fabrique du consensus informationnel
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm line-clamp-2">
+              Retour d'expérience sur la campagne de sensibilisation aux 'deepfakes textuels' et aux manipulations de sondages d'opinion sur TikTok et Twitter/X à l'approche des législatives.
+            </p>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">task_alt</span> 120 délégués certifiés</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">forum</span> 4 recommandations transmises aux doyens</span>
+</div>
+</div>
+<div class="lg:col-span-3 flex flex-col justify-center items-start lg:items-end gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">
+              Format Éco-Data : 340 Ko
+            </span>
+<a class="w-full lg:w-auto bg-badge-blue-bg hover:bg-surface-container text-badge-blue-text font-label-md text-label-md font-bold px-space-md py-2.5 rounded-lg flex items-center justify-center gap-2 transition-colors" download="" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Télécharger le Kit PDF</span>
+</a>
+</div>
+</div>
+<!-- Record 2: Yaoundé -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-shadow grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<div class="lg:col-span-3 rounded-xl overflow-hidden h-44 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="Session de formation en salle informatique à Yaoundé Cameroun montrant un formateur pointant un graphique de propagation de rumeurs sur tableau blanc devant de jeunes professionnels des médias." src="/assets/images/visual-5528c3a9d5db.svg"/>
+<div class="absolute bottom-2 left-2 bg-surface-card/90 backdrop-blur-sm px-2 py-0.5 rounded text-xs font-bold text-primary">
+              Yaoundé, Cameroun
+            </div>
+</div>
+<div class="lg:col-span-6">
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-secondary">Atelier Pôle Afrique Centrale</span>
+<span>•</span>
+<span>Rapport validé le 05 Octobre 2025</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-serif mb-space-xs">
+              Kit de Survie Numérique : Débunkage d'images satellitaires et feux de brousse
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm line-clamp-2">
+              Comment distinguer une vraie catastrophe climatique d'anciennes captures recyclées. Méthodologie d'exploitation libre du visualiseur NASA FIRMS et Sentinel Hub pour les journalistes locaux.
+            </p>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">task_alt</span> 45 journalistes régionaux</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-solar-orange">translate</span> Disponible en Français &amp; Anglais</span>
+</div>
+</div>
+<div class="lg:col-span-3 flex flex-col justify-center items-start lg:items-end gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">
+              Format Éco-Data : 512 Ko
+            </span>
+<a class="w-full lg:w-auto bg-badge-blue-bg hover:bg-surface-container text-badge-blue-text font-label-md text-label-md font-bold px-space-md py-2.5 rounded-lg flex items-center justify-center gap-2 transition-colors" download="" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Télécharger le Guide PDF</span>
+</a>
+</div>
+</div>
+<!-- Record 3: Antananarivo -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-shadow grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<div class="lg:col-span-3 rounded-xl overflow-hidden h-44 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="Atelier d'animation participatif à Antananarivo Madagascar avec des jeunes animateurs radio communautaires manipulant des enregistreurs audio et discutant de la vérification des sources orales." src="/assets/images/visual-3c6d50360102.svg"/>
+<div class="absolute bottom-2 left-2 bg-surface-card/90 backdrop-blur-sm px-2 py-0.5 rounded text-xs font-bold text-primary">
+              Antananarivo, Océan Indien
+            </div>
+</div>
+<div class="lg:col-span-6">
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-secondary">Atelier Pôle Océan Indien</span>
+<span>•</span>
+<span>Rapport validé le 28 Septembre 2025</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-serif mb-space-xs">
+              Radios communautaires &amp; Fact-checking : Transmettre l'EMI aux zones hors-réseau
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm line-clamp-2">
+              Guide pratique de création de micro-bulletins audio de 90 secondes en dialectes régionaux pour déconstruire les rumeurs sans redonner de visibilité au mensonge d'origine.
+            </p>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">task_alt</span> 18 stations communautaires</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">campaign</span> 250 000 auditeurs touchés</span>
+</div>
+</div>
+<div class="lg:col-span-3 flex flex-col justify-center items-start lg:items-end gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">
+              Format Éco-Data : 280 Ko
+            </span>
+<a class="w-full lg:w-auto bg-badge-blue-bg hover:bg-surface-container text-badge-blue-text font-label-md text-label-md font-bold px-space-md py-2.5 rounded-lg flex items-center justify-center gap-2 transition-colors" download="" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Télécharger la Fiche Action</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Appel à Proposition (Host an Event / Co-organisation) -->
+<section class="max-w-[1280px] w-full mx-auto px-margin-desktop py-space-3xl">
+<div class="bg-gradient-to-br from-primary via-primary-container to-tertiary rounded-3xl p-space-xl lg:p-space-2xl text-on-primary shadow-xl relative overflow-hidden">
+<!-- Decorative Backdrop Graphic -->
+<div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-white/5 blur-2xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center relative z-10">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-white mb-space-sm">
+<span class="material-symbols-outlined text-[16px] text-solar-orange">hub</span>
+            Incubateur Citoyen &amp; Pédagogique
+          </div>
+<h2 class="font-headline-2xl text-headline-2xl font-serif text-white mb-space-sm leading-tight">
+            Vous souhaitez organiser un Café-Média ou un atelier VoiCI-EMI dans votre faculté ou association ?
+          </h2>
+<p class="font-body-xl text-body-xl text-inverse-on-surface max-w-2xl opacity-90 mb-space-lg">
+            Le consortium VoiCI-EMI met à votre disposition gratuitement : kit de communication, fiches pédagogiques standardisées UNESCO MIL, prise en charge partielle des frais d’accueil et mise en relation avec des intervenants certifiés.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">verified</span>
+<span class="font-label-md text-label-md text-white">Labellisation Officielle</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">inventory_2</span>
+<span class="font-label-md text-label-md text-white">Kit Clé en Main</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">support_agent</span>
+<span class="font-label-md text-label-md text-white">Mentorat Réseau</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
+<div class="bg-surface-card p-space-lg rounded-2xl text-on-surface w-full max-w-sm shadow-2xl">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-1">Candidater comme hôte</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Réponse garantie sous 48h par le coordinateur de votre pôle régional.
+            </p>
+<form class="space-y-space-sm" onsubmit="handleCandidacySubmit(event)">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 font-bold">Votre Établissement / Asso</label>
+<input class="w-full h-11 px-3 bg-surface-container-low rounded-lg text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Univ. Cheikh Anta Diop" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 font-bold">Ville &amp; Pays</label>
+<input class="w-full h-11 px-3 bg-surface-container-low rounded-lg text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Bamako, Mali" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 font-bold">Email de contact</label>
+<input class="w-full h-11 px-3 bg-surface-container-low rounded-lg text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="contact@organisation.org" required="" type="email"/>
+</div>
+<button class="w-full mt-space-sm bg-secondary hover:bg-secondary/90 text-on-secondary py-3 rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md transition-all" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Déposer notre proposition</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Quick-View Modal Overlay (Pure Vanilla JS) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-space-md" id="quickview-modal">
+<div class="bg-surface-card rounded-2xl max-w-xl w-full p-space-xl shadow-2xl relative">
+<button class="absolute top-space-md right-space-md text-on-surface-variant hover:text-on-surface w-8 h-8 rounded-full bg-surface-container flex items-center justify-center" onclick="closeModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="flex flex-col gap-space-sm" id="modal-content">
+<!-- Dynamically injected -->
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-space-lg py-space-sm rounded-xl shadow-xl flex items-center gap-space-sm transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="toast">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">check_circle</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold" id="toast-title">Inscription Confirmée !</div>
+<div class="font-body-sm text-body-sm text-inverse-on-surface/80" id="toast-desc">Votre lien sécurisé sans mot de passe a été activé.</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,89 @@
+function updatePreviewName() {
+      const prenom = document.getElementById('input-prenom').value.trim();
+      const nom = document.getElementById('input-nom').value.trim();
+      const displayElem = document.getElementById('preview-learner-name');
+      if (prenom || nom) {
+        displayElem.innerText = `${prenom} ${nom}`.toUpperCase();
+      } else {
+        displayElem.innerText = "MOUSSA KOUASSI";
+      }
+    }
+
+    function togglePassVisibility() {
+      const passInput = document.getElementById('input-password');
+      const eyeIcon = document.getElementById('eye-icon');
+      if (passInput.type === "password") {
+        passInput.type = "text";
+        eyeIcon.innerText = "visibility_off";
+      } else {
+        passInput.type = "password";
+        eyeIcon.innerText = "visibility";
+      }
+    }
+
+    function handleDownloadSubmit(event) {
+      event.preventDefault();
+      const btn = document.getElementById('btn-download-action');
+      const btnText = document.getElementById('cta-button-text');
+      const toast = document.getElementById('download-success-toast');
+
+      // Visual progress feedback
+      btn.disabled = true;
+      btnText.innerText = "Génération sécurisée du PDF (SHA-256)...";
+
+      setTimeout(() => {
+        btnText.innerText = "Attestation Téléchargée !";
+        btn.classList.remove('bg-primary-container', 'hover:bg-primary');
+        btn.classList.add('bg-secondary', 'text-on-secondary');
+        toast.classList.remove('hidden');
+
+        // Create artificial download trigger
+        const dummyAnchor = document.createElement('a');
+        dummyAnchor.setAttribute('href', '#');
+        dummyAnchor.setAttribute('download', 'VoiCI-EMI-Attestation-Moussa-Kouassi.pdf');
+        document.body.appendChild(dummyAnchor);
+        dummyAnchor.click();
+        document.body.removeChild(dummyAnchor);
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btnText.innerText = "Télécharger à nouveau (PDF)";
+        }, 4000);
+      }, 1200);
+    }
+
+    function simulateShare(platform) {
+      const certUrl = "https://voici-emi.africa/certif/VCI-MIL-2025-08942";
+      const textMsg = encodeURIComponent("J'ai validé avec 92% mon attestation de compétences en Esprit Critique et Détection des Fausses Informations sur VoiCI-EMI Afrique ! Vérifiez ma certification ici : " + certUrl);
+      
+      if (platform === 'LinkedIn') {
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(certUrl)}`, '_blank', 'width=600,height=500');
+      } else if (platform === 'WhatsApp') {
+        window.open(`https://api.whatsapp.com/send?text=${textMsg}`, '_blank');
+      }
+    }
+
+    function copyPublicVerificationLink() {
+      const certUrl = "https://voici-emi.africa/certif/VCI-MIL-2025-08942";
+      navigator.clipboard.writeText(certUrl).then(() => {
+        const feedback = document.getElementById('copy-label-feedback');
+        const orig = feedback.innerText;
+        feedback.innerText = "Copié !";
+        feedback.classList.add('text-secondary', 'font-bold');
+        setTimeout(() => {
+          feedback.innerText = orig;
+          feedback.classList.remove('text-secondary', 'font-bold');
+        }, 2500);
+      });
+    }
+
+    document.getElementById('btn-copy-id').addEventListener('click', function() {
+      navigator.clipboard.writeText('VCI-MIL-2025-08942').then(() => {
+        const btnSpan = this.querySelector('span:last-child');
+        const oldText = btnSpan.innerText;
+        btnSpan.innerText = "ID Copié !";
+        setTimeout(() => {
+          btnSpan.innerText = oldText;
+        }, 2000);
+      });
+    });

@@ -1,0 +1,34 @@
+const openBtn = document.getElementById('open-relais-modal-btn');
+    const closeBtn = document.getElementById('close-relais-modal-btn');
+    const cancelBtn = document.getElementById('cancel-relais-btn');
+    const closeSuccessBtn = document.getElementById('close-success-btn');
+    const modal = document.getElementById('relais-modal');
+    const form = document.getElementById('relais-form');
+    const successMsg = document.getElementById('relais-success');
+
+    function showModal() {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      form.classList.remove('hidden');
+      successMsg.classList.add('hidden');
+      form.reset();
+    }
+
+    if (openBtn) openBtn.addEventListener('click', showModal);
+    if (closeBtn) closeBtn.addEventListener('click', hideModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', hideModal);
+    if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', hideModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) hideModal();
+    });
+
+    function submitRelaisForm() {
+      form.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+    }

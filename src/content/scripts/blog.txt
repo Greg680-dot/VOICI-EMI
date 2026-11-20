@@ -1,0 +1,141 @@
+(function initBlogFilters() {
+      const searchInput = document.getElementById('searchInput');
+      const formatFilter = document.getElementById('formatFilter');
+      const rubriquePills = document.querySelectorAll('.rubrique-pill');
+      const categoryChips = document.querySelectorAll('.category-chip');
+      const articleCards = document.querySelectorAll('.article-card');
+      const resultsCounter = document.getElementById('resultsCounter');
+      const noResultsState = document.getElementById('noResultsState');
+      const resetFilters = document.getElementById('resetFilters');
+      const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+      const ecoDataToggle = document.getElementById('ecoDataToggle');
+
+      let currentRubrique = 'all';
+      let currentCategory = 'all';
+      let currentQuery = '';
+      let currentFormat = 'all';
+
+      function applyFilter() {
+        let visibleCount = 0;
+
+        articleCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category') || '';
+          const cardRubrique = card.getAttribute('data-rubrique') || '';
+          const cardFormat = card.getAttribute('data-format') || '';
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesSearch = currentQuery === '' || cardText.includes(currentQuery);
+          const matchesRubrique = currentRubrique === 'all' || cardRubrique === currentRubrique;
+          const matchesCategory = currentCategory === 'all' || cardCategory === currentCategory;
+          const matchesFormat = currentFormat === 'all' || cardFormat.includes(currentFormat);
+
+          if (matchesSearch && matchesRubrique && matchesCategory && matchesFormat) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Update Counter
+        resultsCounter.textContent = visibleCount + (visibleCount > 1 ? ' publications' : ' publication');
+
+        // Toggle Empty state
+        if (visibleCount === 0) {
+          noResultsState.classList.remove('hidden');
+        } else {
+          noResultsState.classList.add('hidden');
+        }
+      }
+
+      // Search Event
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.toLowerCase().trim();
+          applyFilter();
+        });
+      }
+
+      // Rubrique Pills Click
+      rubriquePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          rubriquePills.forEach(p => {
+            p.classList.remove('bg-primary', 'text-on-primary');
+            p.classList.add('bg-surface-card', 'text-on-surface-variant');
+          });
+          pill.classList.remove('bg-surface-card', 'text-on-surface-variant');
+          pill.classList.add('bg-primary', 'text-on-primary');
+
+          currentRubrique = pill.getAttribute('data-rubrique');
+          applyFilter();
+        });
+      });
+
+      // Category Chips Click
+      categoryChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          categoryChips.forEach(c => {
+            c.classList.remove('bg-surface-container-high', 'text-primary', 'font-bold');
+            c.classList.add('bg-surface-card', 'text-on-surface');
+          });
+          chip.classList.remove('bg-surface-card', 'text-on-surface');
+          chip.classList.add('bg-surface-container-high', 'text-primary', 'font-bold');
+
+          currentCategory = chip.getAttribute('data-category');
+          applyFilter();
+        });
+      });
+
+      // Format Select Event
+      if (formatFilter) {
+        formatFilter.addEventListener('change', (e) => {
+          currentFormat = e.target.value;
+          applyFilter();
+        });
+      }
+
+      // Reset Actions
+      function resetAll() {
+        currentRubrique = 'all';
+        currentCategory = 'all';
+        currentQuery = '';
+        currentFormat = 'all';
+
+        if (searchInput) searchInput.value = '';
+        if (formatFilter) formatFilter.value = 'all';
+
+        rubriquePills.forEach((p, idx) => {
+          if (idx === 0) {
+            p.classList.add('bg-primary', 'text-on-primary');
+            p.classList.remove('bg-surface-card', 'text-on-surface-variant');
+          } else {
+            p.classList.remove('bg-primary', 'text-on-primary');
+            p.classList.add('bg-surface-card', 'text-on-surface-variant');
+          }
+        });
+
+        categoryChips.forEach((c, idx) => {
+          if (idx === 0) {
+            c.classList.add('bg-surface-container-high', 'text-primary', 'font-bold');
+            c.classList.remove('bg-surface-card', 'text-on-surface');
+          } else {
+            c.classList.remove('bg-surface-container-high', 'text-primary', 'font-bold');
+            c.classList.add('bg-surface-card', 'text-on-surface');
+          }
+        });
+
+        applyFilter();
+      }
+
+      if (resetFilters) resetFilters.addEventListener('click', resetAll);
+      if (clearFiltersBtn) clearFiltersBtn.addEventListener('click', resetAll);
+
+      // Eco-Data Mode Toast / Indicator
+      if (ecoDataToggle) {
+        ecoDataToggle.addEventListener('change', (e) => {
+          if (e.target.checked) {
+            console.log('Mode Éco-data actif : images compressées et scripts légers activés');
+          }
+        });
+      }
+    })();

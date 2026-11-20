@@ -1,0 +1,102 @@
+(function initModuleWorkspace() {
+      // 1. Before/After Image Comparison Slider
+      const container = document.getElementById('comparison-container');
+      const overlay = document.getElementById('original-overlay');
+      const handle = document.getElementById('slider-handle');
+      let isDragging = false;
+
+      function updateSplit(xPos) {
+        if (!container) return;
+        const rect = container.getBoundingClientRect();
+        let percentage = ((xPos - rect.left) / rect.width) * 100;
+        if (percentage < 5) percentage = 5;
+        if (percentage > 95) percentage = 95;
+        
+        overlay.style.width = percentage + '%';
+        handle.style.left = percentage + '%';
+      }
+
+      if (container && overlay && handle) {
+        container.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          updateSplit(e.clientX);
+        });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+        window.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          updateSplit(e.clientX);
+        });
+
+        // Touch support for mobile devices
+        container.addEventListener('touchstart', (e) => {
+          isDragging = true;
+          if (e.touches.length > 0) updateSplit(e.touches[0].clientX);
+        });
+        window.addEventListener('touchend', () => { isDragging = false; });
+        window.addEventListener('touchmove', (e) => {
+          if (!isDragging || e.touches.length === 0) return;
+          updateSplit(e.touches[0].clientX);
+        });
+      }
+
+      // 2. Interactive Instant Feedback & Score Tracking
+      const radios = document.querySelectorAll('input[name="quiz-choice"]');
+      const feedbacks = {
+        'opt-a': document.getElementById('feedback-opt-a'),
+        'opt-b': document.getElementById('feedback-opt-b'),
+        'opt-c': document.getElementById('feedback-opt-c')
+      };
+      const scoreText = document.getElementById('score-text');
+      const scoreGauge = document.getElementById('score-gauge');
+      const successBanner = document.getElementById('success-banner');
+      const validateBtn = document.getElementById('validate-btn');
+
+      radios.forEach((radio) => {
+        radio.addEventListener('change', (e) => {
+          const val = e.target.value;
+
+          // Hide all feedback panels first
+          Object.values(feedbacks).forEach(el => {
+            if (el) el.classList.add('hidden');
+          });
+
+          // Show specific pedagogical feedback immediately
+          if (feedbacks[val]) {
+            feedbacks[val].classList.remove('hidden');
+          }
+
+          // Evaluate score
+          if (val === 'opt-b') {
+            // Correct choice
+            if (scoreText) scoreText.innerText = '100%';
+            if (scoreGauge) scoreGauge.setAttribute('stroke-dasharray', '100, 100');
+            if (successBanner) successBanner.classList.remove('hidden');
+
+            // Save progress locally as per requirement (No account required)
+            try {
+              localStorage.setItem('voici_emi_module_2_status', 'completed');
+              localStorage.setItem('voici_emi_module_2_score', '100');
+            } catch(err) {
+              console.log('LocalStorage active');
+            }
+
+            if (validateBtn) {
+              validateBtn.classList.remove('bg-primary-container', 'text-on-primary');
+              validateBtn.classList.add('bg-secondary', 'text-on-secondary');
+              validateBtn.innerHTML = '<span>Score Enregistré ! Accéder au Module 3</span><span class="material-symbols-outlined text-[18px]">verified</span>';
+            }
+          } else {
+            // Incorrect choice
+            if (scoreText) scoreText.innerText = '0%';
+            if (scoreGauge) scoreGauge.setAttribute('stroke-dasharray', '0, 100');
+            if (successBanner) successBanner.classList.add('hidden');
+
+            if (validateBtn) {
+              validateBtn.classList.add('bg-primary-container', 'text-on-primary');
+              validateBtn.classList.remove('bg-secondary', 'text-on-secondary');
+              validateBtn.innerHTML = '<span>Réessayer pour atteindre les 70%</span><span class="material-symbols-outlined text-[18px]">refresh</span>';
+            }
+          }
+        });
+      });
+    })();

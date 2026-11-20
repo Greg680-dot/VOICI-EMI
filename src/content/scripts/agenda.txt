@@ -1,0 +1,134 @@
+// Filter Buttons Interaction
+  document.querySelectorAll('#filter-format button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('#filter-format button').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'active');
+        b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+      button.classList.add('bg-primary', 'text-on-primary', 'active');
+      button.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      showToast('Filtre appliqué', 'Mise à jour des événements en cours...');
+    });
+  });
+
+  // Timezone Switcher Interaction
+  document.querySelectorAll('#filter-timezone button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('#filter-timezone button').forEach(b => {
+        b.classList.remove('bg-secondary', 'text-on-secondary', 'active');
+        b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+      button.classList.add('bg-secondary', 'text-on-secondary', 'active');
+      button.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      showToast('Fuseau synchronisé', 'Horaires convertis pour ' + button.innerText.trim());
+    });
+  });
+
+  // 1-Click Instant Register Handler
+  function handleInstantRegister(btn) {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[20px]">refresh</span> <span>Génération du pass...</span>`;
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-secondary');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check</span> <span>Place Réservée !</span>`;
+      showToast('Accès Masterclasse Accordé !', 'Votre pass numérique chiffré sans mot de passe est actif.');
+    }, 800);
+  }
+
+  // Candidacy Form Handler
+  function handleCandidacySubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">refresh</span> Envoi en cours...`;
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      form.innerHTML = `
+        <div class="text-center py-space-md">
+          <div class="w-12 h-12 bg-badge-green-bg text-secondary rounded-full flex items-center justify-center mx-auto mb-space-sm">
+            <span class="material-symbols-outlined text-[28px]">thumb_up</span>
+          </div>
+          <h4 class="font-headline-sm text-headline-sm text-primary font-bold mb-1">Candidature Reçue !</h4>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Le coordinateur régional VoiCI-EMI vous contactera sous 48h avec le kit de déploiement.</p>
+        </div>
+      `;
+      showToast('Dossier enregistré', 'Votre proposition d’atelier a été transmise au pôle territorial.');
+    }, 900);
+  }
+
+  // Modal Handler for Detail Quick Views
+  const mockDetails = {
+    1: {
+      tag: "Café-Média Campus • Hub Cotonou",
+      title: "Esprit critique & Rumeurs sanitaires sur WhatsApp",
+      date: "Samedi 26 Octobre 2025 • 10:00 GMT+1",
+      body: "Ce café-média rassemble étudiants en médecine, journalistes scientifiques et animateurs de santé communautaire pour contrer l'infodémie dans les groupes de messagerie familiaux.",
+      spots: "18 places restantes sur 60"
+    },
+    2: {
+      tag: "Atelier Pratique • Webinaire Mobile",
+      title: "Comment vérifier une image détournée avec son smartphone",
+      date: "Mardi 29 Octobre 2025 • 18:30 GMT",
+      body: "Apprenez en direct avec nos formateurs à vérifier l'origine d'une photo d'actualité en moins de 3 minutes sans aucun matériel professionnel.",
+      spots: "Accès illimité - 380 inscrits actuels"
+    },
+    3: {
+      tag: "Table-Ronde Diplomatique • UNESCO MIL",
+      title: "Régulation des algorithmes et désinformation en Afrique",
+      date: "Vendredi 7 Novembre 2025 • 15:00 GMT+3",
+      body: "Un échange d'autorité avec les régulateurs de télécommunication, sociologues des médias et représentants des plateformes numériques en Afrique.",
+      spots: "Diffusion publique & retransmission radio"
+    }
+  };
+
+  function handleModalQuickView(id) {
+    const data = mockDetails[id];
+    const container = document.getElementById('modal-content');
+    container.innerHTML = `
+      <span class="inline-block bg-badge-blue-bg text-badge-blue-text font-label-md text-label-md px-3 py-1 rounded-full font-bold w-fit">
+        ${data.tag}
+      </span>
+      <h3 class="font-headline-md text-headline-md text-primary font-serif">${data.title}</h3>
+      <div class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+        <span class="material-symbols-outlined text-[18px]">event</span>
+        <span>${data.date}</span>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant my-space-xs">${data.body}</p>
+      <div class="bg-surface-container-low p-space-sm rounded-lg font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between">
+        <span>${data.spots}</span>
+        <span class="text-secondary font-bold">Standard UNESCO MIL</span>
+      </div>
+      <button onclick="confirmModalAction()" class="w-full bg-primary hover:bg-primary-container text-on-primary py-3 rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-colors mt-space-sm">
+        <span class="material-symbols-outlined text-[18px]">verified</span>
+        <span>Confirmer ma participation gratuite</span>
+      </button>
+    `;
+    document.getElementById('quickview-modal').classList.remove('hidden');
+  }
+
+  function confirmModalAction() {
+    closeModal();
+    showToast('Réservation validée !', 'Un rappel vous sera envoyé 1h avant le début de la session.');
+  }
+
+  function closeModal() {
+    document.getElementById('quickview-modal').classList.add('hidden');
+  }
+
+  // Toast Functionality
+  function showToast(title, desc) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toast-title').innerText = title;
+    document.getElementById('toast-desc').innerText = desc;
+    toast.classList.remove('translate-y-32', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.add('translate-y-32', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3800);
+  }

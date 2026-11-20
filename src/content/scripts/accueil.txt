@@ -1,0 +1,30 @@
+(function initVoiCIHome() {
+      const btnSearch = document.getElementById('btn-tab-search');
+      const btnSubmit = document.getElementById('btn-tab-submit');
+      const viewSearch = document.getElementById('guichet-search-view');
+      const viewSubmit = document.getElementById('guichet-submit-view');
+
+      if (!btnSearch || !btnSubmit || !viewSearch || !viewSubmit) return;
+
+      btnSearch.addEventListener('click', () => {
+        btnSearch.classList.add('bg-surface-card', 'text-primary', 'shadow-sm', 'font-bold');
+        btnSearch.classList.remove('text-on-surface-variant');
+        
+        btnSubmit.classList.remove('bg-surface-card', 'text-primary', 'shadow-sm', 'font-bold');
+        btnSubmit.classList.add('text-on-surface-variant');
+
+        viewSearch.classList.remove('hidden');
+        viewSubmit.classList.add('hidden');
+      });
+
+      btnSubmit.addEventListener('click', () => {
+        btnSubmit.classList.add('bg-surface-card', 'text-primary', 'shadow-sm', 'font-bold');
+        btnSubmit.classList.remove('text-on-surface-variant');
+
+        btnSearch.classList.remove('bg-surface-card', 'text-primary', 'shadow-sm', 'font-bold');
+        btnSearch.classList.add('text-on-surface-variant');
+
+        viewSubmit.classList.remove('hidden');
+        viewSearch.classList.add('hidden');
+      });
+    })();

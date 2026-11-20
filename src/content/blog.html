@@ -1,0 +1,613 @@
+<div class="flex flex-col w-full">
+<!-- Top Ambient Glow & Section Header -->
+<section class="relative w-full overflow-hidden bg-surface pb-12 pt-6">
+<div class="absolute -right-36 -top-24 h-96 w-96 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/4 top-1/2 h-64 w-64 rounded-full bg-secondary-container/15 blur-2xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<!-- Breadcrumb & Micro Status -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-surface-container-high/60">
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Plateforme VoiCI-EMI</a>
+<span class="material-symbols-outlined text-sm text-outline">chevron_right</span>
+<span class="text-primary font-bold">Blog &amp; Décryptages</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-green-bg text-badge-green-text font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Taxonomie EMI Conforme PRD
+          </span>
+<span class="hidden sm:inline-flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-outline">network_wifi</span>
+            Mode Éco-data disponible
+          </span>
+</div>
+</div>
+<!-- Main Editorial Header -->
+<div class="pt-8 pb-10 max-w-4xl">
+<div class="inline-flex items-center gap-2 mb-3">
+<span class="h-2 w-8 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Observatoire Citoyen &amp; EMI</span>
+</div>
+<h1 class="font-headline-2xl text-headline-2xl text-on-surface tracking-tight mb-4">
+          Blog &amp; Décryptages de l'Écosystème Informationnel
+        </h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-3xl leading-relaxed">
+          Articles, notions clés et guides pratiques pour muscler son esprit critique sans jargon académique. Des clés concrètes adaptées aux réalités numériques et médiatiques africaines.
+        </p>
+</div>
+<!-- Search Bar & Quick Indicators -->
+<div class="bg-surface-card rounded-2xl shadow-sm p-4 sm:p-5 flex flex-col md:flex-row items-stretch md:items-center gap-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="searchInput" placeholder="Rechercher un concept, une manipulation, un deepfake, une arnaque..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 bg-surface-container px-3 py-2.5 rounded-xl text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">tune</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">Format</span>
+</div>
+<select class="bg-surface-container-low text-on-surface font-label-md text-label-md px-3 py-2.5 rounded-xl border-none focus:ring-2 focus:ring-primary focus:outline-none" id="formatFilter">
+<option value="all">Tous les formats (Complet)</option>
+<option value="eco">Éco-data ultra-léger (&lt; 100 Ko)</option>
+<option value="audio">Avec capsule audio / radio</option>
+<option value="infographic">Avec infographie téléchargeable</option>
+</select>
+<button class="px-3 py-2.5 rounded-xl text-outline hover:text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" id="resetFilters" title="Réinitialiser filtres">
+<span class="material-symbols-outlined text-lg align-middle">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Taxonomy Filter System: Rubriques (Pill Toggle) & Categories -->
+<div class="mt-6 flex flex-col gap-4">
+<!-- Rubriques Axis -->
+<div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline shrink-0">Rubrique :</span>
+<div class="flex items-center gap-2 shrink-0" id="rubriquePills">
+<button class="rubrique-pill px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" data-rubrique="all">
+              Toutes les rubriques
+            </button>
+<button class="rubrique-pill px-4 py-1.5 rounded-full bg-surface-card text-on-surface-variant hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-rubrique="Notions clés">
+              Notions clés
+            </button>
+<button class="rubrique-pill px-4 py-1.5 rounded-full bg-surface-card text-on-surface-variant hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-rubrique="Décryptages">
+              Décryptages
+            </button>
+<button class="rubrique-pill px-4 py-1.5 rounded-full bg-surface-card text-on-surface-variant hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-rubrique="Guides pratiques">
+              Guides pratiques
+            </button>
+<button class="rubrique-pill px-4 py-1.5 rounded-full bg-surface-card text-on-surface-variant hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-rubrique="Voix citoyennes">
+              Voix citoyennes
+            </button>
+</div>
+</div>
+<!-- Unified PRD Categories -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="categoryChips">
+<button class="category-chip shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-all" data-category="all">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+            Toutes les catégories (6)
+          </button>
+<button class="category-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-card hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" data-category="Esprit critique &amp; Biais cognitifs">
+<span class="w-2 h-2 rounded-full bg-solar-orange"></span>
+            Esprit critique &amp; Biais cognitifs
+          </button>
+<button class="category-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-card hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" data-category="Réseaux sociaux, Algorithmes &amp; Viralité">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+            Réseaux sociaux, Algorithmes &amp; Viralité
+          </button>
+<button class="category-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-card hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" data-category="IA, Deepfakes &amp; Images manipulées">
+<span class="w-2 h-2 rounded-full bg-vitality-rose"></span>
+            IA, Deepfakes &amp; Images manipulées
+          </button>
+<button class="category-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-card hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" data-category="Cybersécurité, Arnaques &amp; Données personnelles">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+            Cybersécurité, Arnaques &amp; Données personnelles
+          </button>
+<button class="category-chip shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-card hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" data-category="Médias, Journalisme &amp; Citoyenneté numérique">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            Médias, Journalisme &amp; Citoyenneté numérique
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Editorial Article (À la Une) -->
+<section class="w-full pb-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="relative bg-surface-card rounded-3xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
+<!-- Image block with contextual overlays -->
+<div class="lg:col-span-7 relative min-h-[340px] lg:min-h-[480px]">
+<img class="w-full h-full object-cover" data-alt="Editorial photograph showing young African researchers and civic journalists working late in a warm modern media literacy lab in Dakar or Abidjan. Multiple computer screens displaying algorithmic network graphs, social feed monitors, and disinformation analysis charts. Deep sapphire blue tones, natural ambient warm desk lighting, focused intellectual concentration." src="/assets/images/visual-df74241df496.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent lg:hidden"></div>
+<!-- Floating metadata badges on image -->
+<div class="absolute top-4 left-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-badge-rose-bg text-badge-rose-text font-label-md text-label-md tracking-wider uppercase shadow-sm">
+                Décryptage Vedette
+              </span>
+<span class="px-3 py-1 rounded-full bg-surface-card/90 backdrop-blur text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span> Enquête Panafricaine
+              </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 text-surface-card lg:hidden">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-surface-variant">Réseaux sociaux &amp; Viralité</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-white mt-1 leading-snug">
+                Comment les fermes de trolls exploitent les algorithmes de recommandation lors des crises
+              </h2>
+</div>
+</div>
+<!-- Editorial narrative content -->
+<div class="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-between bg-surface-card">
+<div>
+<div class="hidden lg:flex items-center gap-2 mb-3">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-blue-bg text-badge-blue-text font-label-md text-label-md uppercase tracking-wider">
+                  Décryptage
+                </span>
+<span class="text-outline text-xs">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Réseaux sociaux, Algorithmes &amp; Viralité</span>
+</div>
+<h2 class="hidden lg:block font-headline-xl text-headline-xl text-on-surface mb-4 leading-tight hover:text-primary transition-colors cursor-pointer">
+                Comment les fermes de trolls exploitent les algorithmes de recommandation lors des crises
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                Une autopsie méticuleuse des mécaniques de coordination inauthentique observées au Sahel et en Afrique centrale : astroturfing par hashtags artificiels, monétisation du clivage et détournement des fils 'Pour Vous'.
+              </p>
+<!-- Unified PRD Crossway / Passerelle vers formation -->
+<div class="p-4 rounded-2xl bg-surface-container-low mb-6 flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">school</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold block mb-0.5">Passerelle Formation VoiCI-EMI</span>
+<p class="font-label-md text-label-md text-on-surface truncate">Module 3 : Cartographier et déjouer les raids numériques inauthentiques</p>
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary hover:text-primary-container font-semibold mt-1 transition-colors" href="#">
+                    Suivre le cours gratuit (20 min)
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Author accreditation & Reading details -->
+<div class="pt-6 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-full object-cover ring-2 ring-surface-container" data-alt="Close-up portrait of Dr. Aissatou Diop, senior media sociologist from Senegal, smiling warmly with intellectual confidence, wearing a patterned modern wax blazer with neutral background." src="/assets/images/visual-f569d9bf9c94.svg"/>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Dr. Aïssatou Diop</span>
+<span class="material-symbols-outlined text-primary text-xs" title="Vérificatrice assermentée VoiCI-EMI">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Sociologue du numérique • Dakar</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">timer</span> 6 min
+                </span>
+<span class="block font-label-sm text-label-sm text-outline">Éco-data 42 Ko</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Section Divider with Live Count -->
+<div class="max-w-7xl mx-auto px-6 lg:px-12 w-full mb-8 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="h-6 w-1 rounded-full bg-secondary"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Vulgarisation &amp; Pratiques Critiques</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold" id="resultsCounter">6 publications</span>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">verified_user</span>
+      Toutes les ressources respectent la Charte Déontologique
+    </div>
+</div>
+<!-- Articles Grid: 6 Structured Cards conforming strictly to PRD Taxonomy -->
+<section class="w-full pb-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articlesGrid">
+<!-- Card 1: IA & Voice Clones -->
+<article class="article-card flex flex-col justify-between bg-surface-card rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group" data-category="IA, Deepfakes &amp; Images manipulées" data-format="eco audio" data-rubrique="Guides pratiques">
+<div>
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Conceptual editorial composition showing a sound wave waveform transforming into distorted digital artifacts, overlaid on a modern smartphone interface in West Africa, navy blue and soft cyan accents, clean studio photography style." src="/assets/images/visual-a3b628ee0182.svg"/>
+<div class="absolute top-3 left-3 flex gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-rose-bg text-badge-rose-text font-label-md text-label-md uppercase tracking-wider">
+                  Guide pratique
+                </span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-on-surface/80 text-surface-card font-label-sm text-label-sm backdrop-blur flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-solar-orange">headphones</span> Audio inclus
+              </div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-vitality-rose"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">IA, Deepfakes &amp; Images manipulées</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2 mb-3">
+                Note vocale virale : les 5 indicateurs d'un clone vocal synthétique
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-5">
+                Respiration manquante, artefacts métalliques et intonations robotisées : le pas-à-pas pour repérer les faux enregistrements attribués à des personnalités publiques sur WhatsApp.
+              </p>
+<!-- Passerelle PRD: Fact-Check lié -->
+<div class="p-3 rounded-xl bg-badge-blue-bg/60 flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-base">fact_check</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold truncate">Fact-check lié : Audio faux ministre</span>
+</div>
+<span class="material-symbols-outlined text-primary text-sm shrink-0">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xs">
+                KB
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Koffi Badou</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+              4 min
+            </div>
+</div>
+</article>
+<!-- Card 2: Biais cognitifs & Confirmation -->
+<article class="article-card flex flex-col justify-between bg-surface-card rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group" data-category="Esprit critique &amp; Biais cognitifs" data-format="eco infographic" data-rubrique="Notions clés">
+<div>
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artistic graphic representation of human psychology and perception: a stylized human profile made of luminous blue and amber neural lines looking into a prism refracting light, symbolizing cognitive bias and media processing, clean minimalist design." src="/assets/images/visual-23ec5321e0fc.svg"/>
+<div class="absolute top-3 left-3 flex gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-orange-bg text-badge-orange-text font-label-md text-label-md uppercase tracking-wider">
+                  Notions clés
+                </span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-on-surface/80 text-surface-card font-label-sm text-label-sm backdrop-blur flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">download</span> Schéma PDF
+              </div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-solar-orange"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Esprit critique &amp; Biais cognitifs</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2 mb-3">
+                Le biais de confirmation : pourquoi nous partageons ce qui nous conforte
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-5">
+                Quand une rumeur flatte nos convictions ou nos peurs, notre esprit baisse la garde. Analyse des réflexes psychologiques qui transforment un internaute ordinaire en vecteur viral.
+              </p>
+<!-- Passerelle PRD: Formation liée -->
+<div class="p-3 rounded-xl bg-badge-green-bg/60 flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-base">school</span>
+<span class="font-label-sm text-label-sm text-badge-green-text font-semibold truncate">Formation liée : Auto-défense cognitive</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm shrink-0">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-badge-orange-bg text-solar-orange flex items-center justify-center font-bold text-xs">
+                FT
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Fatou Traoré</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+              5 min
+            </div>
+</div>
+</article>
+<!-- Card 3: Mobile Money & Phishing -->
+<article class="article-card flex flex-col justify-between bg-surface-card rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group" data-category="Cybersécurité, Arnaques &amp; Données personnelles" data-format="eco" data-rubrique="Décryptages">
+<div>
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial visual of an African marketplace trader holding a feature phone with a simulated SMS payment notification, contrasting realistic fintech security UI with suspicious phishing codes, bright outdoor daylight setting." src="/assets/images/visual-22fefeb2b9e0.svg"/>
+<div class="absolute top-3 left-3 flex gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-blue-bg text-badge-blue-text font-label-md text-label-md uppercase tracking-wider">
+                  Décryptage
+                </span>
+</div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm font-semibold flex items-center gap-1">
+                Alerte Arnaque
+              </div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Cybersécurité &amp; Données</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2 mb-3">
+                Fraude Mobile Money : anatomie des faux messages de transferts
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-5">
+                Ingénierie sociale par SMS spoofing, faux numéros de service client et manipulation par urgence : les tactiques exactes des escrocs décryptées pour protéger vos transactions.
+              </p>
+<!-- Passerelle PRD: Guichet & Signalement -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-base">report</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Signaler un SMS au Guichet</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm shrink-0">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-error-container text-error flex items-center justify-center font-bold text-xs">
+                MC
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Marc Camara</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+              7 min
+            </div>
+</div>
+</article>
+<!-- Card 4: Radios communautaires & Déserts d'info -->
+<article class="article-card flex flex-col justify-between bg-surface-card rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group" data-category="Médias, Journalisme &amp; Citoyenneté numérique" data-format="eco audio" data-rubrique="Voix citoyennes">
+<div>
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Atmospheric documentary photo of a rural community radio studio in Guinea or Mali, a female local presenter speaking into a broadcast microphone, sound equipment on wooden table, warm sunlight filtering through window, genuine civic journalistic spirit." src="/assets/images/visual-8379e9e9468b.svg"/>
+<div class="absolute top-3 left-3 flex gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-green-bg text-badge-green-text font-label-md text-label-md uppercase tracking-wider">
+                  Voix citoyennes
+                </span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-on-surface/80 text-surface-card font-label-sm text-label-sm backdrop-blur flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary">mic</span> Extrait radio 3 min
+              </div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Médias &amp; Citoyenneté</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2 mb-3">
+                Déserts médiatiques ruraux : le rôle vital des radios communautaires
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-5">
+                Quand l'accès à internet fait défaut, la traduction de l'actualité en langues nationales par les radios de proximité demeure le premier rempart contre les rumeurs sanitaires et sécuritaires.
+              </p>
+<!-- Passerelle PRD: Charte & Réseau -->
+<div class="p-3 rounded-xl bg-badge-green-bg/60 flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-base">radio</span>
+<span class="font-label-sm text-label-sm text-badge-green-text font-semibold truncate">Réseau des 48 Radios Relais</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm shrink-0">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs">
+                ZK
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Zénabou Koulibaly</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+              5 min
+            </div>
+</div>
+</article>
+<!-- Card 5: Reverse Image Search -->
+<article class="article-card flex flex-col justify-between bg-surface-card rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group" data-category="IA, Deepfakes &amp; Images manipulées" data-format="eco infographic" data-rubrique="Guides pratiques">
+<div>
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial visual showing hands holding an Android smartphone running a visual verification application, lens scanning an image, magnifying glass graphics with data nodes, clean contemporary UI design style with sapphire and green touches." src="/assets/images/visual-f04cb6989ad8.svg"/>
+<div class="absolute top-3 left-3 flex gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-rose-bg text-badge-rose-text font-label-md text-label-md uppercase tracking-wider">
+                  Guide pratique
+                </span>
+</div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm shadow-sm">
+                Pas à pas
+              </div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-vitality-rose"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">IA, Deepfakes &amp; Images manipulées</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2 mb-3">
+                Recherche d'images inversée sur smartphone Android : le guide pas à pas
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-5">
+                Pas besoin d'un ordinateur de bureau pour retrouver la date et l'auteur d'une photo détournée : Google Lens, Yandex et TinEye configurés sur navigateur mobile en 3 minutes.
+              </p>
+<!-- Passerelle PRD: Fact-Check lié -->
+<div class="p-3 rounded-xl bg-badge-blue-bg/60 flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-base">fact_check</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold truncate">Voir les 12 cas d'école documentés</span>
+</div>
+<span class="material-symbols-outlined text-primary text-sm shrink-0">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xs">
+                EN
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Emmanuel N'Dri</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+              3 min
+            </div>
+</div>
+</article>
+<!-- Card 6: Filter Bubbles on TikTok & Facebook -->
+<article class="article-card flex flex-col justify-between bg-surface-card rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group" data-category="Réseaux sociaux, Algorithmes &amp; Viralité" data-format="eco infographic" data-rubrique="Notions clés">
+<div>
+<div class="relative h-48 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial conceptual illustration showing multicolored transparent soap bubbles isolating digital human silhouettes browsing algorithmic mobile feeds, representing filter bubbles and echo chambers, deep navy background with luminous highlights." src="/assets/images/visual-175729cd3805.svg"/>
+<div class="absolute top-3 left-3 flex gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-orange-bg text-badge-orange-text font-label-md text-label-md uppercase tracking-wider">
+                  Notions clés
+                </span>
+</div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm shadow-sm">
+                Infographie
+              </div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Réseaux sociaux, Algorithmes &amp; Viralité</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2 mb-3">
+                Comprendre les bulles de filtres sur TikTok et Facebook
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-5">
+                Comment les algorithmes d'engagement optimisent votre temps d'écran en vous enfermant dans une réalité sur-mesure. Comprendre la boucle de rétroaction pour ré-aérer son flux.
+              </p>
+<!-- Passerelle PRD: Simulateur lié -->
+<div class="p-3 rounded-xl bg-surface-container-high/60 flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-base">psychology</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold truncate">Tester le Simulateur de Bulle</span>
+</div>
+<span class="material-symbols-outlined text-primary text-sm shrink-0">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xs">
+                YS
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Yacouba Sanogo</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+              6 min
+            </div>
+</div>
+</article>
+</div>
+<!-- No Results State (Hidden by default) -->
+<div class="hidden text-center py-16 bg-surface-card rounded-2xl p-8 max-w-xl mx-auto shadow-sm" id="noResultsState">
+<span class="material-symbols-outlined text-5xl text-outline mb-3">search_off</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">Aucun article ne correspond à votre filtre</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Essayez d'élargir vos critères ou de réinitialiser la sélection taxonomique.</p>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors" id="clearFiltersBtn">
+          Réinitialiser tous les filtres
+        </button>
+</div>
+</div>
+</section>
+<!-- Encart d'incitation transversale : Micro-cours gratuit 15 min -->
+<section class="w-full pb-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="relative overflow-hidden rounded-3xl bg-primary text-on-primary shadow-xl">
+<!-- Decorative abstract civic patterns -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-primary-container opacity-40 blur-2xl"></div>
+<div class="absolute left-10 -top-24 w-60 h-60 rounded-full bg-secondary opacity-30 blur-2xl"></div>
+<div class="relative z-10 p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-card/15 backdrop-blur font-label-sm text-label-sm tracking-wider uppercase mb-4 text-primary-fixed">
+<span class="material-symbols-outlined text-sm text-secondary-fixed">bolt</span>
+              Apprentissage Rapide • Sans Inscription
+            </div>
+<h3 class="font-headline-xl text-headline-xl text-white mb-4 leading-tight">
+              Vous avez aimé cet article ? Suivez le micro-cours gratuit de 15 minutes sans inscription.
+            </h3>
+<p class="font-body-xl text-body-xl text-primary-fixed max-w-2xl leading-relaxed mb-6">
+              Passez de la théorie à la pratique : un parcours interactif guidé, 3 mini-défis d'évaluation de l'information et votre attestation d'initiation téléchargeable immédiatement.
+            </p>
+<div class="flex flex-wrap items-center gap-6 text-on-primary font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+                100% Panafricain &amp; Gratuit
+              </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+                Compatible WhatsApp &amp; Mobile
+              </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+                Validé par la Charte UNESCO MIL
+              </div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-center">
+<div class="w-full bg-surface-card/10 backdrop-blur-md p-6 rounded-2xl flex flex-col gap-4">
+<div class="flex items-center justify-between text-white border-b border-white/10 pb-3">
+<span class="font-label-md text-label-md uppercase tracking-wider">Durée estimée</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-fixed">15 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary-fixed">
+                Rejoignez plus de 14 200 citoyens, étudiants et médiateurs déjà formés sur le continent.
+              </p>
+<a class="w-full text-center py-3.5 px-6 rounded-xl bg-secondary text-on-secondary font-label-lg text-label-lg font-bold hover:bg-secondary/90 transition-all shadow-md" href="#">
+                Démarrer le Micro-cours Immédiatement
+              </a>
+<span class="text-center font-label-sm text-label-sm text-primary-fixed/80">
+                Aucun mot de passe ni carte bancaire requis.
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination, Language & Low-Bandwidth (Éco-data) Control Bar -->
+<section class="w-full pb-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="bg-surface-card rounded-2xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Language Switcher aligned with Pan-African target -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-base">translate</span>
+<span>Langue éditoriale :</span>
+</div>
+<div class="inline-flex rounded-lg bg-surface-container p-1">
+<button class="px-2.5 py-1 rounded-md bg-surface-card font-label-sm text-label-sm text-primary font-bold shadow-xs">FR</button>
+<button class="px-2.5 py-1 rounded-md hover:bg-surface-card/50 font-label-sm text-label-sm text-on-surface-variant transition-colors">EN</button>
+<button class="px-2.5 py-1 rounded-md hover:bg-surface-card/50 font-label-sm text-label-sm text-on-surface-variant transition-colors" title="Bambara / Dioula">BM</button>
+<button class="px-2.5 py-1 rounded-md hover:bg-surface-card/50 font-label-sm text-label-sm text-on-surface-variant transition-colors" title="Haoussa">HA</button>
+</div>
+</div>
+<!-- Pagination Controls -->
+<div class="flex items-center gap-2">
+<button class="w-9 h-9 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high flex items-center justify-center transition-colors disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm">1</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">3</button>
+<span class="text-outline px-1">...</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">8</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</div>
+<!-- Low Bandwidth / Eco-data Mode Toggle Indicator (< 100 Ko) -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<div class="flex items-center gap-2">
+<div class="text-right">
+<span class="block font-label-sm text-label-sm font-semibold text-on-surface">Éco-data optimisé</span>
+<span class="block font-label-sm text-label-sm text-outline">&lt; 100 Ko / page</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="ecoDataToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Filter Logic (Pure Vanilla Client Script) -->
+
+</div>

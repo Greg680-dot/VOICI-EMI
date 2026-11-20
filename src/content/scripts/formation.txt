@@ -1,0 +1,147 @@
+// Filter Functionality for Curricula
+  const levelBtns = document.querySelectorAll('#level-filters button');
+  const catBtns = document.querySelectorAll('#category-filters button');
+  const courseCards = document.querySelectorAll('.course-card');
+
+  let activeLevel = 'all';
+  let activeCat = 'all';
+
+  function applyFilters() {
+    courseCards.forEach(card => {
+      const cardLevel = card.getAttribute('data-level');
+      const cardCat = card.getAttribute('data-category');
+
+      const matchesLevel = (activeLevel === 'all' || cardLevel === activeLevel);
+      const matchesCat = (activeCat === 'all' || cardCat === activeCat);
+
+      if (matchesLevel && matchesCat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  levelBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      levelBtns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary');
+        b.classList.add('bg-surface-container-low', 'text-on-surface');
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-on-surface');
+      btn.classList.add('bg-primary', 'text-on-primary');
+      activeLevel = btn.getAttribute('data-level');
+      applyFilters();
+    });
+  });
+
+  catBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catBtns.forEach(b => b.classList.remove('ring-2', 'ring-primary'));
+      btn.classList.add('ring-2', 'ring-primary');
+      activeCat = btn.getAttribute('data-category');
+      applyFilters();
+    });
+  });
+
+  // Interactive 4-Step Module Demo Reader Logic
+  let currentStep = 2; // Default starting at Step 2 (Leçon)
+  const totalSteps = 4;
+
+  const stepTabs = document.querySelectorAll('.step-tab-btn');
+  const stepPanels = document.querySelectorAll('.step-panel');
+  const prevBtn = document.getElementById('prev-step-btn');
+  const nextBtn = document.getElementById('next-step-btn');
+  const progressBar = document.getElementById('step-progress-bar');
+  const percentText = document.getElementById('step-percent');
+
+  function updateStepUI(step) {
+    currentStep = step;
+
+    // Toggle panels
+    stepPanels.forEach((panel, index) => {
+      if (index + 1 === currentStep) {
+        panel.classList.remove('hidden');
+      } else {
+        panel.classList.add('hidden');
+      }
+    });
+
+    // Update tab bar
+    stepTabs.forEach(tab => {
+      const target = parseInt(tab.getAttribute('data-step-target'));
+      if (target === currentStep) {
+        tab.className = 'step-tab-btn px-4 py-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-all';
+      } else {
+        tab.className = 'step-tab-btn px-4 py-2 rounded-lg bg-transparent text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-all';
+      }
+    });
+
+    // Progress bar & label
+    const percent = Math.round((currentStep / totalSteps) * 100);
+    progressBar.style.width = percent + '%';
+    percentText.textContent = percent + '%';
+
+    // Button states
+    prevBtn.disabled = currentStep === 1;
+    prevBtn.style.opacity = currentStep === 1 ? '0.5' : '1';
+
+    if (currentStep === totalSteps) {
+      nextBtn.innerHTML = `<span>Finaliser</span><span class="material-symbols-outlined text-sm">check</span>`;
+    } else {
+      nextBtn.innerHTML = `<span>Étape suivante</span><span class="material-symbols-outlined text-sm">arrow_forward</span>`;
+    }
+  }
+
+  stepTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const stepTarget = parseInt(tab.getAttribute('data-step-target'));
+      updateStepUI(stepTarget);
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 1) {
+      updateStepUI(currentStep - 1);
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep < totalSteps) {
+      updateStepUI(currentStep + 1);
+    } else {
+      alert("Félicitations pour avoir complété le module type ! Remplissez le formulaire à l'étape 4 pour obtenir votre badge démo.");
+    }
+  });
+
+  // Quiz Interaction inside step 3
+  const quizRadios = document.querySelectorAll('input[name="quiz-sample"]');
+  const quizFeedback = document.getElementById('quiz-feedback');
+
+  quizRadios.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      quizFeedback.classList.remove('hidden');
+      if (e.target.value === 'correct') {
+        quizFeedback.className = 'p-4 rounded-xl bg-badge-green-bg text-badge-green-text font-body-sm text-body-sm';
+        quizFeedback.innerHTML = `
+          <div class="flex items-center gap-2 font-bold font-label-md text-label-md">
+            <span class="material-symbols-outlined text-lg">check_circle</span>
+            Excellente réponse (+30 points) ! Score actuel : 85% (Seuil dépassé)
+          </div>
+          <p class="pt-1 text-on-surface-variant">En refusant de relayer l'anonymat, vous brisez la chaîne de contagion informationnelle.</p>
+        `;
+      } else {
+        quizFeedback.className = 'p-4 rounded-xl bg-badge-orange-bg text-badge-orange-text font-body-sm text-body-sm';
+        quizFeedback.innerHTML = `
+          <div class="flex items-center gap-2 font-bold font-label-md text-label-md">
+            <span class="material-symbols-outlined text-lg">warning</span>
+            Attention au réflexe grégaire !
+          </div>
+          <p class="pt-1 text-on-surface-variant">Partager une fausse alerte « par précaution » alimente la panique collective. La bonne attitude est de stopper le relais et vérifier.</p>
+        `;
+      }
+    });
+  });
+
+  // Initialize
+  updateStepUI(2);

@@ -1,0 +1,413 @@
+<div class="flex flex-col w-full">
+<!-- Reading Progress Bar -->
+<div class="sticky top-20 z-40 w-full bg-surface-container h-1 overflow-hidden">
+<div class="h-full bg-vitality-rose w-0 transition-all duration-150 ease-out" id="scrollProgress"></div>
+</div>
+<section class="w-full max-w-[1280px] mx-auto px-margin-desktop py-space-lg">
+<!-- Breadcrumb -->
+<nav aria-label="Fil d'Ariane" class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant mb-space-lg">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="accueil" href="#">
+<span class="material-symbols-outlined text-[15px]">home</span>Accueil
+      </a>
+<span class="text-outline-variant text-[12px]">/</span>
+<a class="hover:text-primary transition-colors" data-path="blog-decryptages" href="#">Blog &amp; Décryptages</a>
+<span class="text-outline-variant text-[12px]">/</span>
+<span class="text-primary font-semibold truncate">Réseaux sociaux, Algorithmes &amp; Viralité</span>
+</nav>
+<!-- Article Header & Meta Cluster -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start mb-space-2xl">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="bg-badge-rose-bg text-badge-rose-text font-label-md text-label-md px-space-md py-space-xs rounded-full uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span>Décryptage Approfondi
+          </span>
+<span class="bg-badge-blue-bg text-badge-blue-text font-label-md text-label-md px-space-md py-space-xs rounded-full">
+            6 min de lecture
+          </span>
+<span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>24 Octobre 2024
+          </span>
+</div>
+<h1 class="font-headline-2xl text-headline-2xl text-primary font-serif leading-tight">
+          Comment les fermes de faux comptes et bots amplifient artificiellement la colère sur les réseaux sociaux en période de crise
+        </h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant">
+          Enquête sur la mécanique invisible de l'astroturfing en Afrique subsaharienne : quand une poignée d'opérateurs synchronisés fabrique l'illusion d'un embrasement populaire spontané.
+        </p>
+<!-- Author Card -->
+<div class="flex items-center justify-between p-space-md bg-surface-card rounded-xl shadow-sm mt-space-xs">
+<div class="flex items-center gap-space-md">
+<div class="relative w-14 h-14 rounded-full overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait photography of Dr Aissatou Diop, a 38-year-old Senegalese digital sociology scholar wearing modern professional attire, smiling warmly in a sunlit university research library in Dakar, warm cinematic illumination, natural editorial style" src="/assets/images/visual-321f0c0e8aed.svg"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Dr. Aïssatou Diop</span>
+<span class="material-symbols-outlined text-secondary text-[18px]" title="Chercheuse vérifiée VoiCI-EMI">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sociologue du numérique &amp; Chercheuse associée VoiCI-EMI</span>
+</div>
+</div>
+<!-- Eco-data Mode Toggle Indicator -->
+<div class="hidden sm:flex items-center gap-space-xs bg-badge-green-bg px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-secondary text-[16px]">speed</span>
+<span class="font-label-sm text-label-sm text-badge-green-text font-semibold">Mode Éco-data actif (&lt; 45 Ko)</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Floating Bar Desktop -->
+<div class="lg:col-span-4 bg-surface-container-low p-space-lg rounded-2xl flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Partage Citoyen Low-Data</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Réseaux lents OK</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="flex items-center justify-center gap-space-xs bg-secondary text-on-secondary px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg hover:bg-on-secondary-container transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp (&lt;50 Ko)</span>
+</button>
+<button class="flex items-center justify-center gap-space-xs bg-tertiary-container text-on-primary px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg hover:bg-tertiary transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Telegram</span>
+</button>
+</div>
+<button class="w-full flex items-center justify-center gap-space-xs bg-surface-card text-primary font-label-lg text-label-lg py-space-sm rounded-lg hover:bg-surface-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-vitality-rose text-[20px]">picture_as_pdf</span>
+<span>Télécharger la Fiche Mémo (&lt; 120 Ko)</span>
+</button>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-xs">
+<span>Licence Creative Commons BY-NC-SA</span>
+<button class="hover:text-primary transition-colors flex items-center gap-0.5" onclick="navigator.clipboard.writeText(window.location.href); alert('Lien copié dans le presse-papiers !');">
+<span class="material-symbols-outlined text-[14px]">link</span>Copier le lien
+          </button>
+</div>
+</div>
+</div>
+<!-- Key Takeaways / Synthèse Rapide -->
+<div class="w-full bg-surface-card p-space-xl rounded-2xl shadow-md mb-space-2xl">
+<div class="flex items-center gap-space-sm mb-space-lg">
+<div class="w-10 h-10 rounded-full bg-badge-blue-bg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">lightbulb</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Digest Pédagogique</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Synthèse Rapide : 4 Clés pour Comprendre la Manipulation</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<div class="flex items-start gap-space-md p-space-md bg-warm-canvas rounded-xl">
+<div class="w-8 h-8 rounded-full bg-badge-rose-bg text-badge-rose-text flex items-center justify-center font-bold flex-shrink-0 font-label-lg text-label-lg">01</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">L'illusion de la masse (Astroturfing)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Moins de 40 comptes automatisés suffisent pour générer 10 000 retweets et hisser un hashtag polémique dans le Top 3 des tendances régionales en moins de 35 minutes.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-md p-space-md bg-warm-canvas rounded-xl">
+<div class="w-8 h-8 rounded-full bg-badge-rose-bg text-badge-rose-text flex items-center justify-center font-bold flex-shrink-0 font-label-lg text-label-lg">02</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Détournement d'algorithme émotionnel</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Les flux d'actualité privilégient la colère morale, qui induit un taux d'interaction 4 fois plus élevé que les analyses apaisées ou les rectifications factuelles.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-md p-space-md bg-warm-canvas rounded-xl">
+<div class="w-8 h-8 rounded-full bg-badge-rose-bg text-badge-rose-text flex items-center justify-center font-bold flex-shrink-0 font-label-lg text-label-lg">03</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Comptes dormants réactivés</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">La plupart des comptes moteurs ont été créés plusieurs années auparavant sous de fausses identités culturelles régionales et réactivés lors de séquences électorales précises.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-md p-space-md bg-warm-canvas rounded-xl">
+<div class="w-8 h-8 rounded-full bg-badge-rose-bg text-badge-rose-text flex items-center justify-center font-bold flex-shrink-0 font-label-lg text-label-lg">04</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Défense citoyenne en 15 secondes</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Identifier l'identifiant technique (chiffres aléatoires), la régularité temporelle des posts à la minute près et l'absence totale de productions textuelles originales.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Layout with Sticky Lateral Sidebar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Article Text Core (8 cols) -->
+<article class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Lead In Paragraph -->
+<p class="font-body-xl text-body-xl text-on-surface leading-relaxed">
+          Lorsqu'une tension socio-politique ou une rumeur économique émerge dans nos métropoles, l'espace public numérique s'enflamme rarement de manière spontanée. Derrière l'apparence d'un cri du cœur collectif se dissimule une ingénierie de la manipulation soigneusement rodée : l'amplification artificielle par coordination inauthentique coordonnée (CIB).
+        </p>
+<!-- Section 1 -->
+<div class="flex flex-col gap-space-md">
+<h2 class="font-headline-xl text-headline-xl text-primary font-serif">1. L'anatomie d'une raid numérique : de la cellule au grand public</h2>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            Dans la terminologie des sciences de l'information, l'<strong>astroturfing</strong> désigne l'opération consistant à simuler un mouvement populaire de base (<em>grassroots</em>) alors qu'il est en réalité orchestré par une cellule restreinte d'acteurs d'influence. Le mode opératoire identifié par nos équipes de veille suit une chronologie quasi métronomique :
+          </p>
+<!-- Infographic SVG Container -->
+<div class="bg-surface-card p-space-lg rounded-2xl shadow-sm my-space-sm">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Modélisation VoiCI-EMI — Schéma de Coordination Inauthentique</span>
+<span class="bg-badge-orange-bg text-badge-orange-text font-label-sm text-label-sm px-space-sm py-0.5 rounded-full">Flux de contagion</span>
+</div>
+<!-- Lightweight Data Visualization SVG Diagram -->
+<div class="w-full overflow-x-auto">
+<svg class="w-full min-w-[640px] text-on-surface" fill="none" viewbox="0 0 760 260" xmlns="http://www.w3.org/2000/svg">
+<!-- Step 1: Cellule source -->
+<rect fill="#EFF4FF" height="120" rx="12" stroke="#004AAD" stroke-dasharray="3 3" stroke-width="1.5" width="160" x="20" y="70"></rect>
+<circle cx="100" cy="105" fill="#00357F" r="18"></circle>
+<path d="M95 105L100 110L108 100" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2"></path>
+<text fill="#00357F" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="100" y="145">1. CELLULE SOURCE</text>
+<text fill="#434653" font-family="Plus Jakarta Sans" font-size="10" text-anchor="middle" x="100" y="165">5 à 10 coordinateurs</text>
+<text fill="#434653" font-family="Plus Jakarta Sans" font-size="10" text-anchor="middle" x="100" y="178">Scripts &amp; Visuels falsifiés</text>
+<!-- Arrow 1 to 2 -->
+<path d="M185 130 H 245" marker-end="url(#arrowhead)" stroke="#F68712" stroke-width="2.5"></path>
+<text fill="#F68712" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" text-anchor="middle" x="215" y="120">+2 min</text>
+<!-- Step 2: Ferme de bots -->
+<rect fill="#FDF2F8" height="160" rx="12" width="180" x="250" y="50"></rect>
+<circle cx="340" cy="85" fill="#ED0E64" r="18"></circle>
+<circle cx="310" cy="115" fill="#9D174D" opacity="0.4" r="12"></circle>
+<circle cx="370" cy="115" fill="#9D174D" opacity="0.4" r="12"></circle>
+<circle cx="340" cy="140" fill="#9D174D" opacity="0.4" r="12"></circle>
+<text fill="#ED0E64" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="340" y="175">2. FERME DE BOTS</text>
+<text fill="#434653" font-family="Plus Jakarta Sans" font-size="10" text-anchor="middle" x="340" y="195">Amplification x5 000</text>
+<text fill="#434653" font-family="Plus Jakarta Sans" font-size="10" text-anchor="middle" x="340" y="208">Hashtags forcés en Trend</text>
+<!-- Arrow 2 to 3 -->
+<path d="M435 130 H 495" stroke="#ED0E64" stroke-width="2.5"></path>
+<text fill="#ED0E64" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" text-anchor="middle" x="465" y="120">+15 min</text>
+<!-- Step 3: Citoyens réels -->
+<rect fill="#ECFDF5" height="200" rx="12" width="230" x="500" y="30"></rect>
+<circle cx="615" cy="70" fill="#006C49" r="22"></circle>
+<circle cx="560" cy="110" fill="#4EDEA3" r="16"></circle>
+<circle cx="670" cy="110" fill="#4EDEA3" r="16"></circle>
+<circle cx="590" cy="150" fill="#4EDEA3" r="16"></circle>
+<circle cx="640" cy="150" fill="#4EDEA3" r="16"></circle>
+<text fill="#006C49" font-family="Plus Jakarta Sans" font-size="13" font-weight="700" text-anchor="middle" x="615" y="190">3. CONTAGION ÉMOTIONNELLE</text>
+<text fill="#065F46" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="615" y="210">Indignation sincère relayée</text>
+<text fill="#434653" font-family="Plus Jakarta Sans" font-size="10" text-anchor="middle" x="615" y="224">Groupes WhatsApp familiaux atteints</text>
+<defs>
+<marker id="arrowhead" markerheight="6" markerwidth="6" orient="auto" refx="4" refy="3">
+<polygon fill="#F68712" points="0 0, 6 3, 0 6"></polygon>
+</marker>
+</defs>
+</svg>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mt-space-sm text-center">
+              Figure 1 : Passage du signal inauthentique automatisé à l'assimilation organique par la société civile en situation d'hyper-émotivité.
+            </p>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            Lorsque la phase 2 est atteinte, l'algorithme des plateformes considère ce volume soudain comme un "intérêt public urgent". La recommandation organique prend alors le relais des faux profils, rendant la source artificielle presque invisible aux yeux des internautes ordinaires.
+          </p>
+</div>
+<!-- Section 2: 3 Red Flags -->
+<div class="flex flex-col gap-space-md">
+<h2 class="font-headline-xl text-headline-xl text-primary font-serif">2. Les 3 signaux d'alerte pour démasquer un compte automatisé en 15 secondes</h2>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            Pas besoin d'être data-analyste ou expert en cybersécurité pour détecter la supercherie. Trois vérifications visuelles immédiates permettent d'évaluer le degré de crédibilité d'un compte véhément :
+          </p>
+<div class="space-y-space-md my-space-xs">
+<!-- Flag 1 -->
+<div class="p-space-lg bg-surface-card rounded-xl shadow-sm flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-badge-rose-bg text-vitality-rose flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">badge</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-vitality-rose uppercase font-bold tracking-wider">Signal 1</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">L'identifiant alphanumérique non personnalisé (@prenom83920194)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Les générateurs automatiques de profils associent un prénom générique à une suite aléatoire de 8 à 10 chiffres. Si l'en-tête du profil est par ailleurs vide, créé le mois précédent ou réutilise une photo d'agence libre de droits, le doute méthodologique est impératif.
+                </p>
+</div>
+</div>
+<!-- Flag 2 -->
+<div class="p-space-lg bg-surface-card rounded-xl shadow-sm flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-badge-orange-bg text-solar-orange flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-solar-orange uppercase font-bold tracking-wider">Signal 2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">La cadence de publication surhumaine (&gt; 150 posts/jour)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Un citoyen engagé publie en moyenne entre 2 et 10 messages par jour. Les logiciels d'automatisation crachent des réponses toutes les 40 secondes, 24 heures sur 24 sans interruption nocturne, souvent avec des variations minimes du même texte d'invective.
+                </p>
+</div>
+</div>
+<!-- Flag 3 -->
+<div class="p-space-lg bg-surface-card rounded-xl shadow-sm flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-badge-blue-bg text-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">sync_alt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Signal 3</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Le ratio followers/following disproportionné et sans contenu original</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Le compte suit 4 500 comptes mais n'a que 12 abonnés. Son fil ne comporte aucune photo personnelle, aucun avis sur la vie quotidienne ou sportive : son activité se résume à 100 % à des retweets agressifs sur une thématique clivante unique.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Methodological Box: Auto-defense Reflex -->
+<div class="p-space-xl bg-surface-container rounded-2xl shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<span class="material-symbols-outlined text-primary text-[28px]">shield</span>
+<div>
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Protocole Pédagogique</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Réflexe d'Auto-défense VoiCI-EMI : La Règle des 3 Pauses</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md font-body-sm text-body-sm">
+<div class="bg-surface-card p-space-md rounded-xl flex flex-col justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-vitality-rose font-bold block mb-1">Pause 1</span>
+<span class="font-label-lg text-label-lg text-on-surface block font-bold mb-1">Respiration Émotionnelle</span>
+<p class="text-on-surface-variant">Si une publication provoque en vous un sentiment d'effroi ou d'indignation fulgurante, n'appuyez sur aucun bouton de republication pendant 3 minutes.</p>
+</div>
+</div>
+<div class="bg-surface-card p-space-md rounded-xl flex flex-col justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-solar-orange font-bold block mb-1">Pause 2</span>
+<span class="font-label-lg text-label-lg text-on-surface block font-bold mb-1">Traçage de la Source</span>
+<p class="text-on-surface-variant">Recherchez l'auteur initial du texte : s'agit-il d'un média reconnu, d'un témoin direct identifié ou d'une capture d'écran sans lien vérifiable ?</p>
+</div>
+</div>
+<div class="bg-surface-card p-space-md rounded-xl flex flex-col justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold block mb-1">Pause 3</span>
+<span class="font-label-lg text-label-lg text-on-surface block font-bold mb-1">Signalement Silencieux</span>
+<p class="text-on-surface-variant">Ne commentez pas pour contredire l'attaque. L'algorithme compte toute réponse comme de l'engagement. Signalez au Guichet VoiCI-EMI ou bloquez sans interagir.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Field Context in Africa -->
+<div class="flex flex-col gap-space-md">
+<h2 class="font-headline-xl text-headline-xl text-primary font-serif">3. La spécificité des écosystèmes panafricains : le pont vers WhatsApp</h2>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            Contrairement aux pays occidentaux où la controverse reste souvent circonscrite aux plateformes publiques comme X (Twitter) ou Facebook, le modèle africain repose sur un <em>pontage transversal</em>. Les captures d'écran des tweets fabriqués de toutes pièces sont immédiatement injectées sous forme de messages vocaux ou d'images compressées dans les groupes de quartier WhatsApp et Telegram.
+          </p>
+<!-- Pedagogy Quote Box -->
+<div class="p-space-lg bg-surface-container-low rounded-xl shadow-sm">
+<blockquote class="font-headline-lg text-headline-lg font-serif italic text-primary leading-snug">
+              « En Afrique, l'arme la plus déstabilisatrice n'est pas le bot lui-même, mais la confiance aveugle que nous accordons à l'oncle ou au collègue qui nous transfère la capture du bot sur notre messagerie privée. »
+            </blockquote>
+<figcaption class="mt-space-sm font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+              — Dr. Aïssatou Diop, Colloque Panafricain EMI, Abidjan 2024
+            </figcaption>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            C'est là que réside le véritable défi civique : transformer chaque citoyen en pare-feu informationnel, capable d'interrompre la chaîne de transmission dans son cercle intime sans agressivité mais avec rigueur.
+          </p>
+</div>
+<!-- Associated Fact-Check Linked Banner (PRD requirement 5) -->
+<div class="p-space-lg bg-badge-blue-bg rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Fact-Check Associé à cet Article</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Analyse de la vague de faux comptes lors des élections régionales</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rapport forensique VoiCI-EMI sur 280 000 interactions analysées.</span>
+</div>
+</div>
+<a class="whitespace-nowrap px-space-md py-space-sm bg-primary text-on-primary font-label-lg text-label-lg rounded-lg hover:bg-primary-container transition-colors shadow-sm flex items-center gap-space-xs" data-path="guichet-verification" href="#">
+<span>Lire l'enquête fact-check</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Sidebar with PRD Cross-Links & Training Modules (4 cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-xl">
+<!-- Recommended Training Card (PRD Requirement 5) -->
+<div class="bg-surface-card p-space-lg rounded-2xl shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="bg-badge-green-bg text-badge-green-text font-label-md text-label-md px-space-sm py-0.5 rounded-full uppercase tracking-wider font-bold">
+              Formation Recommandée
+            </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="material-symbols-outlined text-[14px]">timer</span>15 min chrono
+            </span>
+</div>
+<div class="relative w-full h-40 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Young African students and educators collaborating in a modern tech workshop with laptops analyzing disinformation graphs on glowing screens, cinematic warm lighting, modern academic civic tech environment" src="/assets/images/visual-11f8fd05dcb0.svg"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px]"></div>
+<div class="absolute top-space-sm left-space-sm bg-surface-card/90 px-space-sm py-0.5 rounded text-primary font-label-sm text-label-sm font-bold">
+              Module 3 / Niveau Pratique
+            </div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+              Détectives du Numérique : Cartographier les raids numériques
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Apprenez à utiliser les outils open-source gratuits (Botometer, Wayback Machine) pour repérer une attaque coordonnée avant qu'elle ne devienne virale.
+            </p>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>100% Gratuit</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary text-[16px]">no_accounts</span>Sans création de compte</span>
+</div>
+<a class="w-full bg-secondary text-on-secondary font-label-lg text-label-lg py-space-sm rounded-lg flex items-center justify-center gap-space-xs hover:bg-on-secondary-container transition-all shadow-sm" data-path="formations" href="#">
+<span>Démarrer le module immédiatement</span>
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</a>
+</div>
+<!-- Verification Counter & Report Box -->
+<div class="bg-surface-card p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">crisis_alert</span>
+<h4 class="font-label-lg text-label-lg uppercase tracking-wider font-bold">Vous soupçonnez une vague de faux comptes ?</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Transmettez les liens et captures d'écran suspects à nos 5 Pôles Régionaux. Notre cellule de veille analyse le cluster et publie un bulletin d'alerte sous 24h.
+          </p>
+<a class="w-full bg-surface-container text-primary hover:bg-primary hover:text-on-primary font-label-lg text-label-lg py-space-sm rounded-lg flex items-center justify-center gap-space-xs transition-colors" data-path="guichet-verification" href="#">
+<span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+<span>Signaler un contenu au Guichet</span>
+</a>
+</div>
+<!-- Regional Observatories Data Pill -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-on-surface font-semibold">
+<span>Statut de la veille continentale</span>
+<span class="flex items-center gap-1 text-secondary text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>Actif
+            </span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden my-1">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+<span class="text-on-surface-variant text-label-sm">48 raids numériques neutralisés ce mois par le réseau VoiCI-EMI.</span>
+</div>
+</aside>
+</div>
+<!-- Article Bottom Share & Engagement Banner -->
+<div class="mt-space-2xl p-space-xl bg-surface-card rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-xl">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Partagez ce savoir citoyen autour de vous</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Chaque partage responsable protège vos proches contre la désinformation de panique. Nos formats sont allégés pour ne pas saturer les forfaits mobiles.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm w-full md:w-auto">
+<button class="flex-1 md:flex-initial flex items-center justify-center gap-space-xs bg-secondary text-on-secondary px-space-md py-space-sm rounded-lg font-label-lg text-label-lg hover:bg-on-secondary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp (&lt; 50 Ko)</span>
+</button>
+<button class="flex-1 md:flex-initial flex items-center justify-center gap-space-xs bg-tertiary-container text-on-primary px-space-md py-space-sm rounded-lg font-label-lg text-label-lg hover:bg-tertiary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Telegram</span>
+</button>
+<button class="w-full md:w-auto flex items-center justify-center gap-space-xs bg-surface-container text-primary px-space-md py-space-sm rounded-lg font-label-lg text-label-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-vitality-rose text-[20px]">picture_as_pdf</span>
+<span>Mémo PDF (&lt; 120 Ko)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Scroll Progress Script -->
+
+</div>

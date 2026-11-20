@@ -1,0 +1,698 @@
+<div class="flex flex-col w-full">
+<!-- Top Pedagogical Canvas Header -->
+<section class="relative w-full bg-surface-container-low py-16 lg:py-24 overflow-hidden">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/4 -bottom-20 w-80 h-80 rounded-full bg-secondary/5 blur-2xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12">
+<div class="max-w-3xl space-y-4">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-badge-blue-bg text-badge-blue-text font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">school</span>
+              Pédagogie Civique Ouverte
+            </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-badge-green-bg text-badge-green-text font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Accès Immédiat
+            </span>
+</div>
+<h1 class="font-headline-2xl text-headline-2xl text-on-surface tracking-tight">
+            Académie Citoyenne en <span class="italic font-normal text-primary">Libre Accès</span>
+</h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant leading-relaxed">
+            100% gratuit, sans inscription préalable requise. Apprenez à votre rythme et obtenez votre attestation nominative vérifiable par tiers dès l’évaluation finale validée.
+          </p>
+</div>
+<!-- Pillar Impact Metrics Card -->
+<div class="bg-surface-card p-6 rounded-2xl shadow-sm flex flex-col sm:flex-row gap-6 lg:gap-8 items-center lg:items-start shrink-0">
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Auditeurs Formés</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold">18 420+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">À travers 14 pays</span>
+</div>
+<div class="w-px h-12 bg-surface-container-high hidden sm:block"></div>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Taux d'Émancipation</span>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">94.2%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Scores &gt; 70% aux quiz</span>
+</div>
+<div class="w-px h-12 bg-surface-container-high hidden sm:block"></div>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Cadre Certifié</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">UNESCO</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Référentiel MIL</span>
+</div>
+</div>
+</div>
+<!-- Live Notification Banner -->
+<div class="bg-primary/10 p-4 rounded-xl flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">bolt</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Règle d'or VoiCI-EMI :</strong> Aucun courriel ni mot de passe ne bloque le savoir. Vous ne vous identifiez que si vous souhaitez imprimer ou signer votre brevet numérique d'esprit critique.
+          </p>
+</div>
+<a class="hidden sm:inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-semibold hover:underline shrink-0" href="#demo-reader">
+<span>Tester le parcours interactif</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive Filters & Unified Filter Hub -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 -mt-7 relative z-20 w-full">
+<div class="bg-surface-card p-4 lg:p-6 rounded-2xl shadow-md space-y-4">
+<!-- Top Row: Levels -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-lg">tune</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">Niveau pédagogique :</span>
+</div>
+<div class="flex flex-wrap items-center gap-2" id="level-filters">
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all" data-level="all">
+            Tous les niveaux
+          </button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all" data-level="decouverte">
+            Parcours Découverte (Débutant)
+          </button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all" data-level="pratique">
+            Parcours Pratique (Intermédiaire)
+          </button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all" data-level="relais">
+            Parcours Relais/Pro (Avancé)
+          </button>
+</div>
+</div>
+<div class="h-px w-full bg-surface-container-high"></div>
+<!-- Bottom Row: Unified PRD Categories -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-lg">category</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">Piliers thématiques :</span>
+</div>
+<div class="flex flex-wrap items-center gap-2" id="category-filters">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm" data-category="all">
+            Toutes les thématiques
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-badge-blue-bg text-badge-blue-text font-label-sm text-label-sm hover:opacity-80 transition-opacity" data-category="biais">
+            Biais &amp; Esprit critique
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-badge-orange-bg text-badge-orange-text font-label-sm text-label-sm hover:opacity-80 transition-opacity" data-category="reseaux">
+            Réseaux sociaux &amp; Algorithmes
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-badge-rose-bg text-badge-rose-text font-label-sm text-label-sm hover:opacity-80 transition-opacity" data-category="ia">
+            IA &amp; Médias manipulés
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-badge-green-bg text-badge-green-text font-label-sm text-label-sm hover:opacity-80 transition-opacity" data-category="hygiene">
+            Hygiène numérique &amp; Arnaques
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Training Catalog (4 Main Curricula from PRD) -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 py-16 w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Catalogue Ouvert &amp; Certifiant</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Choisissez un Cursus Autonome</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+        Chaque parcours comprend des leçons séquentielles immersives, un quizz d'ancrage avec validation immédiate et une certification téléchargeable sans friction.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="curriculum-grid">
+<!-- Parcours 1 -->
+<article class="course-card bg-surface-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="reseaux" data-level="pratique">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A young African university researcher working in a bright modern media lab in Abidjan, holding a digital tablet examining video fact-checking data and social network diagrams, golden morning lighting, professional documentary style, deep blues and warm sunlight" src="/assets/images/visual-208053b7b150.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-badge-orange-bg text-badge-orange-text font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              Réseaux Sociaux
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-card/90 backdrop-blur text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">lock_open</span> Sans inscription
+            </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-on-primary">
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">timer</span> 20 min estimées
+            </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">layers</span> 4 modules immersifs
+            </span>
+</div>
+</div>
+<div class="p-6 lg:p-8 flex flex-col flex-1 justify-between gap-6">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-solar-orange"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Parcours Pratique (Intermédiaire)</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+              Vérifier une info sur les réseaux sociaux
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Méthodologie pas à pas pour remonter à la source originelle d’un contenu viral WhatsApp, TikTok ou Facebook, inverser une recherche d'image et démasquer le recyclage de contextes.
+            </p>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Validation par Quiz final (seuil 70%)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Attestation Gratuite</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 py-3 px-5 rounded-lg bg-primary-container text-on-primary hover:bg-primary text-center font-label-lg text-label-lg transition-all shadow-sm flex items-center justify-center gap-2" href="#demo-reader">
+<span>Démarrer le cours</span>
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</a>
+<button class="p-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" title="Consulter le sommaire détaillé">
+<span class="material-symbols-outlined text-lg">toc</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Parcours 2 -->
+<article class="course-card bg-surface-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="hygiene" data-level="decouverte">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up shot of a person using a smartphone in a bustling open-air market in Dakar Senegal, showing financial SMS alerts and digital banking screens with thoughtful expression, natural sunlight, crisp vibrant colors" src="/assets/images/visual-eaa27e72d47e.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-badge-green-bg text-badge-green-text font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              Hygiène Numérique
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-card/90 backdrop-blur text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">lock_open</span> Sans inscription
+            </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-on-primary">
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">timer</span> 15 min chrono
+            </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">layers</span> 3 modules + cas réels
+            </span>
+</div>
+</div>
+<div class="p-6 lg:p-8 flex flex-col flex-1 justify-between gap-6">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Parcours Découverte (Débutant)</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+              Déjouer les faux concours &amp; arnaques Mobile Money
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Analyse concrète des techniques d’hameçonnage ciblant Wave, Orange Money et MTN, des fausses promesses d'emploi gouvernementales et des faux chèques bourses.
+            </p>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary">security</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Cas pratiques réels 2024–2025</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Module d'Urgence</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 py-3 px-5 rounded-lg bg-primary-container text-on-primary hover:bg-primary text-center font-label-lg text-label-lg transition-all shadow-sm flex items-center justify-center gap-2" href="#demo-reader">
+<span>Démarrer le cours</span>
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</a>
+<button class="p-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" title="Consulter le sommaire détaillé">
+<span class="material-symbols-outlined text-lg">toc</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Parcours 3 -->
+<article class="course-card bg-surface-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="ia" data-level="pratique">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Two African computer science and communication students analyzing waveform audio files and deepfake facial landmarks on dual desktop monitors, clean workspace, editorial lighting, blue and violet tones" src="/assets/images/visual-35ab1e7db9ab.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-badge-rose-bg text-badge-rose-text font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              IA &amp; Hypertrucages
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-card/90 backdrop-blur text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">lock_open</span> Sans inscription
+            </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-on-primary">
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">timer</span> 30 min interactives
+            </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">layers</span> 5 modules pratiques
+            </span>
+</div>
+</div>
+<div class="p-6 lg:p-8 flex flex-col flex-1 justify-between gap-6">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-vitality-rose"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Parcours Pratique (Intermédiaire)</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+              Identifier les deepfakes et clones vocaux IA
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Comprendre le fonctionnement des générateurs d'images et voix synthétiques imitant des personnalités publiques. Boîte à outils gratuite d'analyse spectrale et indices biométriques.
+            </p>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary">memory</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Boîte à outils gratuites open-source</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Laboratoire IA</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 py-3 px-5 rounded-lg bg-primary-container text-on-primary hover:bg-primary text-center font-label-lg text-label-lg transition-all shadow-sm flex items-center justify-center gap-2" href="#demo-reader">
+<span>Démarrer le cours</span>
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</a>
+<button class="p-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" title="Consulter le sommaire détaillé">
+<span class="material-symbols-outlined text-lg">toc</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Parcours 4 -->
+<article class="course-card bg-surface-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="biais" data-level="relais">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An inspiring African female educator leading an interactive participatory media literacy workshop in a university classroom in Yaoundé, active students collaborating around boards, bright warm lighting, journalistic atmosphere" src="/assets/images/visual-3b42fc1589e2.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-badge-blue-bg text-badge-blue-text font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              Biais &amp; Animation
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-card/90 backdrop-blur text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">group</span> Pour Relais Locaux
+            </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-on-primary">
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">timer</span> 45 min de formation
+            </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">inventory_2</span> 6 modules + Fiches
+            </span>
+</div>
+</div>
+<div class="p-6 lg:p-8 flex flex-col flex-1 justify-between gap-6">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Parcours Relais/Pro (Avancé)</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+              Animer un atelier d'esprit critique dans son quartier ou sa classe
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Kit méthodologique complet destiné aux enseignants, animateurs socio-éducatifs et leaders associatifs. Fiches de jeux de rôles, simulateurs imprimables et canevas d'animation.
+            </p>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary">download</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Fiches pédagogiques clés en main (PDF)</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">Certification Relais</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 py-3 px-5 rounded-lg bg-primary-container text-on-primary hover:bg-primary text-center font-label-lg text-label-lg transition-all shadow-sm flex items-center justify-center gap-2" href="#demo-reader">
+<span>Démarrer le cours</span>
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</a>
+<button class="p-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" title="Consulter le sommaire détaillé">
+<span class="material-symbols-outlined text-lg">toc</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Interactive Reader Preview (PRD Spec 4: Déroulé d'un module type sans compte) -->
+<section class="w-full bg-surface-container-low py-20" id="demo-reader">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12">
+<div class="max-w-2xl space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">visibility</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Expérience Apprenant Transparent</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Déroulé d'un Module : Expérience Sans Friction</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Explorez ci-dessous les 4 étapes séquentielles d'un module interactif réel. Pas de compte requis pour progresser ni pour tester vos connaissances.
+          </p>
+</div>
+<!-- Progress Flow Navigator Tabs -->
+<div class="bg-surface-card p-1.5 rounded-xl shadow-sm flex flex-wrap gap-1" id="step-nav-bar">
+<button class="step-tab-btn px-4 py-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-all" data-step-target="1">
+<span class="w-4 h-4 rounded-full bg-surface-card text-primary text-xs flex items-center justify-center font-bold">1</span>
+<span>Synthèse</span>
+</button>
+<button class="step-tab-btn px-4 py-2 rounded-lg bg-transparent text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-all" data-step-target="2">
+<span class="w-4 h-4 rounded-full bg-surface-container-high text-on-surface text-xs flex items-center justify-center font-bold">2</span>
+<span>Leçon &amp; Réflexe</span>
+</button>
+<button class="step-tab-btn px-4 py-2 rounded-lg bg-transparent text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-all" data-step-target="3">
+<span class="w-4 h-4 rounded-full bg-surface-container-high text-on-surface text-xs flex items-center justify-center font-bold">3</span>
+<span>Quiz Vérification</span>
+</button>
+<button class="step-tab-btn px-4 py-2 rounded-lg bg-transparent text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-all" data-step-target="4">
+<span class="w-4 h-4 rounded-full bg-surface-container-high text-on-surface text-xs flex items-center justify-center font-bold">4</span>
+<span>Attestation</span>
+</button>
+</div>
+</div>
+<!-- Main Reader Display Surface -->
+<div class="bg-surface-card rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[560px]">
+<!-- Module Sidebar (Progress & Breadcrumbs) -->
+<aside class="lg:col-span-4 bg-surface-container p-6 lg:p-8 flex flex-col justify-between space-y-6">
+<div class="space-y-6">
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Module 01 / Parcours Réseaux</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Les Mécanismes de la Viralité Toxique</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pourquoi les fausses alertes se diffusent 6 fois plus vite que les rectifications vérifiées.</p>
+</div>
+<!-- Mini Stepper Indicator -->
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm font-bold">✓</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Étape 1 : Fiche d'introduction synthétique</span>
+</div>
+<div class="w-px h-4 bg-surface-container-high ml-3"></div>
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold">2</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Étape 2 : Leçon &amp; Encadré Réflexe Clé</span>
+</div>
+<div class="w-px h-4 bg-surface-container-high ml-3"></div>
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Étape 3 : Quiz interactif (Seuil 70%)</span>
+</div>
+<div class="w-px h-4 bg-surface-container-high ml-3"></div>
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Étape 4 : Déclenchement de compte doux</span>
+</div>
+</div>
+</div>
+<!-- Bottom Micro-Card -->
+<div class="p-4 rounded-xl bg-surface-card shadow-sm space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Progression du lecteur</span>
+<span class="text-secondary font-bold" id="step-percent">50%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full transition-all duration-300 w-1/2" id="step-progress-bar"></div>
+</div>
+</div>
+</aside>
+<!-- Dynamic Reading Workspace -->
+<div class="lg:col-span-8 p-6 lg:p-12 flex flex-col justify-between">
+<!-- Step 1 Content Panel -->
+<div class="step-panel hidden space-y-6" id="step-content-1">
+<div class="flex items-center justify-between pb-4">
+<span class="px-3 py-1 rounded-full bg-badge-blue-bg text-badge-blue-text font-label-sm text-label-sm font-bold">Étape 1 : Synthèse &amp; Objectifs</span>
+<span class="font-label-sm text-label-sm text-outline">Temps de lecture : 3 min</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Pourquoi nos émotions court-circuitent notre vigilance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Sur les plateformes de messagerie instantanée en Afrique subsaharienne, 80% des fausses nouvelles exploitent la peur ou la bienveillance familiale (« Transfert d’urgence », « Appel à don falsifié », « Recrutement immédiat sans concours »). Les algorithmes favorisent l'hyper-réaction plutôt que la lucidité.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<span class="material-symbols-outlined text-primary text-xl">psychology</span>
+<h4 class="font-label-lg text-label-lg text-on-surface">Biais de Confirmation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nous acceptons plus aisément une information fausse si elle valide nos inquiétudes préexistantes.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<span class="material-symbols-outlined text-secondary text-xl">speed</span>
+<h4 class="font-label-lg text-label-lg text-on-surface">Effet d’Urgence Fabriqué</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">La mention « Transféré souvent » déclenche un comportement de protection communautaire grégaire.</p>
+</div>
+</div>
+</div>
+<!-- Step 2 Content Panel (Default Active) -->
+<div class="step-panel space-y-6" id="step-content-2">
+<div class="flex items-center justify-between pb-4">
+<span class="px-3 py-1 rounded-full bg-badge-orange-bg text-badge-orange-text font-label-sm text-label-sm font-bold">Étape 2 : Leçon Séquentielle</span>
+<span class="font-label-sm text-label-sm text-outline">Temps de lecture : 4 min</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">La Règle des 3 Sources &amp; La Recherche Inversée</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Une capture d’écran n’est pas une preuve. Un message vocal anonyme n'est pas un témoignage authentifié. Pour toute allégation prétendant impliquer un ministère ou une institution publique, appliquez systématiquement le protocole de confirmation croisée.
+            </p>
+<!-- Pedagogical Callout Box: Réflexe Clé -->
+<div class="p-6 rounded-2xl bg-surface-container-low border-l-4 border-primary space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">RÉFLEXE CLÉ VOICI-EMI : « La Pause de 30 Secondes »</span>
+</div>
+<blockquote class="font-headline-md italic font-normal text-on-surface text-base lg:text-lg">
+                « Avant d’appuyer sur Partager, posez-vous ces trois questions : Qui me transmet ceci ? Quel intérêt a l'auteur ? Et si c'était faux, quel préjudice subirait mon proche ? »
+              </blockquote>
+</div>
+<div class="p-4 rounded-xl bg-surface-container space-y-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Méthode technique express :</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Enregistrez l’image jointe &gt; Ouvrez Google Images ou TinEye sur votre navigateur mobile &gt; Cliquez sur l'icône appareil photo &gt; Vérifiez la date de première parution.
+              </p>
+</div>
+</div>
+<!-- Step 3 Content Panel (Interactive Quiz) -->
+<div class="step-panel hidden space-y-6" id="step-content-3">
+<div class="flex items-center justify-between pb-4">
+<span class="px-3 py-1 rounded-full bg-badge-blue-bg text-badge-blue-text font-label-sm text-label-sm font-bold">Étape 3 : Évaluation Interactive</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Seuil d'attestation : 70% requis</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Cas Pratique : Le message vocal d'alerte</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Vous recevez un message vocal sur WhatsApp affirmant qu'une pénurie imminente de carburant va paralyser le réseau national dès demain matin, sans mentionner de nom ni de source officielle. Quelle est votre réaction immédiate ?
+            </p>
+<!-- Interactive Choices -->
+<div class="space-y-3 pt-2" id="quiz-options-container">
+<label class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input class="w-4 h-4 text-primary" name="quiz-sample" type="radio" value="wrong1"/>
+<span class="font-body-sm text-body-sm text-on-surface">A) Je le renvoie immédiatement à mon groupe de quartier familial au cas où ce serait vrai.</span>
+</label>
+<label class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input class="w-4 h-4 text-primary" name="quiz-sample" type="radio" value="correct"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">B) Je suspends le partage, je consulte les canaux certifiés de l'autorité régulatrice et je signale au guichet VoiCI-EMI si aucun canal officiel n'en parle.</span>
+</label>
+<label class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input class="w-4 h-4 text-primary" name="quiz-sample" type="radio" value="wrong2"/>
+<span class="font-body-sm text-body-sm text-on-surface">C) J’ajoute un commentaire alarmant et je le relaie sur TikTok pour faire le buzz.</span>
+</label>
+</div>
+<!-- Quiz Feedback Box -->
+<div class="hidden p-4 rounded-xl bg-badge-green-bg text-badge-green-text font-body-sm text-body-sm" id="quiz-feedback">
+<div class="flex items-center gap-2 font-bold font-label-md text-label-md">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                Excellente réponse (+30 points) ! Score actuel : 85% (Seuil dépassé)
+              </div>
+<p class="pt-1 text-on-surface-variant">En refusant de relayer l'anonymat, vous brisez la chaîne de contagion informationnelle.</p>
+</div>
+</div>
+<!-- Step 4 Content Panel (Gentle Account Trigger) -->
+<div class="step-panel hidden space-y-6" id="step-content-4">
+<div class="flex items-center justify-between pb-4">
+<span class="px-3 py-1 rounded-full bg-badge-green-bg text-badge-green-text font-label-sm text-label-sm font-bold">Étape 4 : Déclenchement Doux</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Attestation Prête (Score 85%)</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Bravo ! Votre Attestation Nominative est Disponible</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Conformément à notre charte, nous n'avons exigé aucune donnée personnelle pendant votre étude. Pour générer votre PDF officiel muni d’un QR Code d’authenticité inviolable, entrez simplement vos nom et prénom (création en 30 secondes).
+            </p>
+<!-- Certificate Visual Mockup -->
+<div class="p-6 rounded-2xl bg-surface-container-low flex flex-col sm:flex-row items-center gap-6 shadow-inner">
+<div class="w-24 h-24 rounded-xl bg-surface-card p-3 flex flex-col items-center justify-center text-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">qr_code_2</span>
+<span class="font-label-sm text-label-sm text-outline mt-1">ID-8921-AF</span>
+</div>
+<div class="space-y-1 text-center sm:text-left flex-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Brevet Émancipation Numérique</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Certificat d’Aptitude Citoyenne MIL</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Délivré par VoiCI-EMI Afrique sous supervision déontologique UNESCO.</p>
+</div>
+</div>
+<!-- 30-sec form -->
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2" onsubmit="event.preventDefault(); alert('Attestation PDF générée avec succès ! Code vérifiable archivé.');">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Prénom &amp; Nom complets pour le diplôme</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-card text-on-surface border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary font-body-sm" placeholder="Ex: Aminata Diallo" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Email pour archivage et duplicata</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-card text-on-surface border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary font-body-sm" placeholder="aminata.diallo@domaine.org" required="" type="email"/>
+</div>
+<div class="sm:col-span-2 pt-2">
+<button class="w-full py-3.5 px-6 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg hover:bg-secondary-container hover:text-on-secondary-container transition-all font-semibold flex items-center justify-center gap-2 shadow-sm" type="submit">
+<span class="material-symbols-outlined text-xl">verified</span>
+<span>Générer et Télécharger Mon Attestation Officielle</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Bottom Navigation Controls -->
+<div class="pt-8 mt-6 flex items-center justify-between gap-4">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center gap-1.5 transition-colors" id="prev-step-btn">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span>Étape précédente</span>
+</button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-sm" id="next-step-btn">
+<span>Étape suivante</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Masterclasses & Exchange Calendar (PRD Point 5) -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+<div class="space-y-2">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Échanges Directs &amp; Rencontres Pédagogiques</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Calendrier des Masterclasses &amp; Webinaires</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+        Sessions interactives mensuelles ouvertes à tous : échangez directement avec les journalistes vérificateurs, experts en cybersécurité et formateurs du continent.
+      </p>
+</div>
+<!-- Masterclass Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Session 1: Prochaine session live (Featured) -->
+<div class="lg:col-span-2 bg-surface-card rounded-2xl p-8 shadow-sm flex flex-col justify-between space-y-6 relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-48 h-48 bg-primary/5 rounded-bl-full pointer-events-none"></div>
+<div class="space-y-4">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+              Prochain Direct Panafricain
+            </span>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+              Jeudi 24 Octobre 2025 • 17h00 GMT
+            </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">
+            Élections, Intox et Réseaux : Comment les salles de rédaction traquent les campagnes coordonnées
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Un face-à-face privilégié avec deux rédacteurs en chef de cellules de fact-checking indépendantes (Sénégal &amp; Côte d'Ivoire). Démonstration des outils de surveillance open-source, analyse de bots twitter/X et protocoles de riposte rapide.
+          </p>
+<!-- Speakers lineup -->
+<div class="flex flex-wrap items-center gap-6 pt-2">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait of a distinguished West African investigative journalist, wearing neat smart casual attire in a television newsroom control booth, smiling confidently, soft cinematic light" src="/assets/images/visual-d819e3083de6.svg"/>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Koffi Mensah</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Journaliste d'investigation, Dakar</p>
+</div>
+</div>
+<div class="w-px h-8 bg-surface-container-high hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait of an African female data journalist with glasses in an editorial office with monitors in the background, sharp focus, professional natural portrait" src="/assets/images/visual-d778aad6a7ed.svg"/>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Dr. Fatou Camara</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chercheuse MIL &amp; Algorithmes</p>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-secondary text-base">videocam</span>
+<span>Diffusion Zoom interactive + YouTube Live (Replay garanti)</span>
+</div>
+<button class="w-full sm:w-auto px-6 py-3 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2" onclick="alert('Lien de connexion direct copié dans votre presse-papier ! Aucun mot de passe requis.');">
+<span class="material-symbols-outlined text-lg">calendar_month</span>
+<span>Accéder au Lien Visio</span>
+</button>
+</div>
+</div>
+<!-- Upcoming Sessions List Column -->
+<div class="space-y-6 flex flex-col justify-between">
+<!-- Upcoming 1 -->
+<div class="bg-surface-card p-6 rounded-2xl shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-rose-bg text-badge-rose-text font-label-sm text-label-sm font-semibold">Webinaire Pratique</span>
+<span class="font-label-sm text-label-sm text-outline">12 Nov. • 16h GMT</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Deepfakes vocaux : Détecter l'usurpation de vos proches</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Atelier d’analyse d'ondes sonores et réglage des paramètres de sécurité WhatsApp pour les familles.</p>
+<div class="pt-2 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-semibold">Animé par le Lab VoiCI</span>
+<a class="text-on-surface hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Upcoming 2 -->
+<div class="bg-surface-card p-6 rounded-2xl shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-blue-bg text-badge-blue-text font-label-sm text-label-sm font-semibold">Session Pédagogique</span>
+<span class="font-label-sm text-label-sm text-outline">28 Nov. • 15h GMT</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Éducateurs &amp; Enseignants : Intégrer l'EMI au secondaire</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Retour d'expérience sur 50 collèges partenaires au Bénin, Cameroun et Togo. Guide d'activités sans écran.</p>
+<div class="pt-2 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-semibold">UNESCO Réseau MIL</span>
+<a class="text-on-surface hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Replay Vault CTA -->
+<div class="p-6 rounded-2xl bg-surface-container flex items-center justify-between gap-4">
+<div class="space-y-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Vidéothèque des Replays</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">38 heures de masterclasses archivées et indexées.</p>
+</div>
+<button class="p-3 rounded-xl bg-surface-card text-primary shadow-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-xl">ondemand_video</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Impact & Educational Charter Callout -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 pb-24 w-full">
+<div class="bg-surface-container-high rounded-2xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+<div class="space-y-3 max-w-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Réseau Territorial Décentralisé</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Vous êtes enseignant ou responsable associatif ?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Déployez les parcours VoiCI-EMI dans votre localité en mode déconnecté. Nous fournissons des clés USB éducatives contenant l’intégralité des cours, vidéos et quizz automatisés pour les zones à connectivité limitée.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+<a class="px-6 py-3.5 rounded-lg bg-surface-card text-on-surface hover:bg-surface transition-all font-label-lg text-label-lg font-semibold shadow-sm" data-path="l-initiative" href="#">
+          Devenir Relais Territorial
+        </a>
+<a class="px-6 py-3.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all font-label-lg text-label-lg font-semibold shadow-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-base">usb</span>
+<span>Demander le Kit Hors-Ligne</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- Inline JavaScript for Client-Side Micro-interactions (Filter + Stepper Reader) -->
